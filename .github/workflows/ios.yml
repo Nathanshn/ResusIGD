@@ -7,8 +7,9 @@ on:
 
 jobs:
   clinical-core-tests:
-    name: ClinicalCore unit tests (math engine)
-    runs-on: macos-15
+    name: ClinicalCore unit tests (math engine, Linux)
+    runs-on: ubuntu-latest
+    container: swift:6.1
     steps:
       - uses: actions/checkout@v4
       - name: Swift version
@@ -18,7 +19,8 @@ jobs:
 
   ios-app:
     name: Build & test iOS app (Simulator)
-    runs-on: macos-15
+    runs-on: macos-latest
+    timeout-minutes: 60
     steps:
       - uses: actions/checkout@v4
       - name: Select latest Xcode
