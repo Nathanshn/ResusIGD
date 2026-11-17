@@ -5,3 +5,4 @@ DerivedData/
 *.xcodeproj/
 xcuserdata/
 build.log
+ClinicalCore/Info.plist
