@@ -1,0 +1,588 @@
+{
+  "version": 1,
+  "items": [
+    {
+      "id": "diazepam",
+      "name": "Diazepam",
+      "category": "antikonvulsan",
+      "formulations": [
+        { "id": "inj", "label": "Injeksi 10 mg/2 mL (5 mg/mL)", "route": "intravena", "kind": "liquid", "mgPerML": 5 },
+        { "id": "rektal5", "label": "Rektal tube 5 mg", "route": "rektal", "kind": "unit", "mgPerUnit": 5, "unitName": "tube rektal", "unitDivisibility": 1 },
+        { "id": "rektal10", "label": "Rektal tube 10 mg", "route": "rektal", "kind": "unit", "mgPerUnit": 10, "unitName": "tube rektal", "unitDivisibility": 1 }
+      ],
+      "regimens": [
+        {
+          "id": "iv", "label": "IV — kejang akut / status epileptikus", "indication": "Kejang ≥ 5 menit atau kejang di IGD", "route": "intravena",
+          "mgPerKgMin": 0.2, "mgPerKgDefault": 0.3, "mgPerKgMax": 0.5,
+          "frequency": "Dosis tunggal; dapat diulang 1× setelah 5 menit bila masih kejang",
+          "maxSingleDoseMg": 10, "formulationIDs": ["inj"],
+          "administration": "IV pelan, kecepatan maks 2 mg/menit. JANGAN diencerkan (mengendap). Siapkan bag-valve-mask.",
+          "notes": ["Maksimal 2 dosis benzodiazepin, lalu lanjut lini kedua (fenitoin/fenobarbital/levetirasetam)."]
+        },
+        {
+          "id": "rektal", "label": "Rektal — kejang tanpa akses IV", "indication": "Kejang di rumah/IGD sebelum akses IV", "route": "rektal",
+          "fixedDoseBands": [ { "minKg": 0, "maxKg": 12, "doseMg": 5 }, { "minKg": 12, "doseMg": 10 } ],
+          "frequency": "Dosis tunggal; dapat diulang 1× setelah 5 menit",
+          "maxSingleDoseMg": 10, "formulationIDs": ["rektal5", "rektal10"],
+          "administration": "BB < 12 kg: 5 mg; BB ≥ 12 kg: 10 mg (IDAI). Masukkan seluruh tube, rapatkan bokong ± 1 menit.",
+          "notes": []
+        }
+      ],
+      "warnings": ["Depresi napas, terutama bila dikombinasi fenobarbital/midazolam.", "Bukan obat rumatan kejang."],
+      "monograph": "Benzodiazepin lini pertama untuk kejang akut. Onset IV 1–3 menit, durasi antikonvulsan relatif singkat (redistribusi).",
+      "references": ["Rekomendasi Penatalaksanaan Status Epileptikus IDAI 2016", "AES Guideline 2016"]
+    },
+    {
+      "id": "fenitoin",
+      "name": "Fenitoin",
+      "category": "antikonvulsan",
+      "formulations": [
+        { "id": "inj", "label": "Injeksi 100 mg/2 mL (50 mg/mL)", "route": "intravena", "kind": "liquid", "mgPerML": 50 }
+      ],
+      "regimens": [
+        {
+          "id": "loading", "label": "Loading IV", "indication": "Status epileptikus (lini kedua)", "route": "intravena",
+          "mgPerKgMin": 15, "mgPerKgDefault": 20, "mgPerKgMax": 20,
+          "frequency": "Dosis tunggal (loading)",
+          "maxSingleDoseMg": 1000, "formulationIDs": ["inj"],
+          "administration": "Encerkan HANYA dalam NaCl 0,9% (mengendap dalam dekstrosa) hingga 1–10 mg/mL. Kecepatan maks 1 mg/kg/menit (maks 50 mg/menit), ± 20 menit. Monitor EKG & TD. Gunakan filter in-line bila ada.",
+          "notes": ["Bila kejang berlanjut: tambahan 10 mg/kg dapat dipertimbangkan (konsultasi)."]
+        },
+        {
+          "id": "rumatan", "label": "Rumatan IV/oral", "indication": "Rumatan setelah loading", "route": "intravena",
+          "mgPerKgMin": 2.5, "mgPerKgDefault": 3, "mgPerKgMax": 4,
+          "frequency": "Tiap 12 jam, mulai 12 jam setelah loading", "dosesPerDay": 2,
+          "maxSingleDoseMg": 200, "maxDailyDoseMg": 400, "maxDailyMgPerKg": 8, "formulationIDs": ["inj"],
+          "administration": "5–8 mg/kg/hari dibagi 2 dosis. IV dalam NaCl 0,9%, kecepatan ≤ 1 mg/kg/menit.",
+          "notes": ["Periksa kadar fenitoin bila tersedia."]
+        }
+      ],
+      "warnings": ["Ekstravasasi: purple glove syndrome / nekrosis.", "Hipotensi dan aritmia bila diberikan terlalu cepat.", "Jangan diberikan IM."],
+      "monograph": "Antikonvulsan penghambat kanal natrium. Lini kedua status epileptikus setelah benzodiazepin.",
+      "references": ["Rekomendasi IDAI 2016", "AES Guideline 2016"]
+    },
+    {
+      "id": "fenobarbital",
+      "name": "Fenobarbital",
+      "category": "antikonvulsan",
+      "formulations": [
+        { "id": "inj", "label": "Injeksi 100 mg/2 mL (50 mg/mL)", "route": "intravena", "kind": "liquid", "mgPerML": 50 }
+      ],
+      "regimens": [
+        {
+          "id": "loading", "label": "Loading IV", "indication": "Status epileptikus (lini kedua); kejang neonatus (lini pertama)", "route": "intravena",
+          "mgPerKgMin": 15, "mgPerKgDefault": 20, "mgPerKgMax": 20,
+          "frequency": "Dosis tunggal (loading)",
+          "maxSingleDoseMg": 1000, "formulationIDs": ["inj"],
+          "administration": "IV pelan dalam 10–20 menit (kecepatan maks 1 mg/kg/menit); dapat diencerkan NaCl 0,9% 1:10.",
+          "notes": ["Siapkan dukungan napas: risiko depresi napas, terutama setelah benzodiazepin."]
+        },
+        {
+          "id": "rumatan", "label": "Rumatan", "indication": "Rumatan setelah loading", "route": "intravena",
+          "mgPerKgMin": 1.5, "mgPerKgDefault": 2.5, "mgPerKgMax": 2.5,
+          "frequency": "Tiap 12 jam, mulai 12 jam setelah loading", "dosesPerDay": 2,
+          "maxSingleDoseMg": 150, "maxDailyDoseMg": 300, "maxDailyMgPerKg": 5, "formulationIDs": ["inj"],
+          "administration": "3–5 mg/kg/hari dibagi 2 dosis.",
+          "notes": []
+        }
+      ],
+      "warnings": ["Depresi napas dan hipotensi.", "Sedasi berkepanjangan."],
+      "monograph": "Barbiturat antikonvulsan. Lini kedua/ketiga status epileptikus pada anak; lini pertama kejang neonatus.",
+      "references": ["Rekomendasi IDAI 2016", "AES Guideline 2016"]
+    },
+    {
+      "id": "midazolam",
+      "name": "Midazolam",
+      "category": "antikonvulsan",
+      "formulations": [
+        { "id": "inj5", "label": "Injeksi 15 mg/3 mL (5 mg/mL)", "route": "intravena", "kind": "liquid", "mgPerML": 5 },
+        { "id": "inj1", "label": "Injeksi 5 mg/5 mL (1 mg/mL)", "route": "intravena", "kind": "liquid", "mgPerML": 1 }
+      ],
+      "regimens": [
+        {
+          "id": "iv", "label": "IV — kejang", "indication": "Kejang akut", "route": "intravena",
+          "mgPerKgMin": 0.1, "mgPerKgDefault": 0.15, "mgPerKgMax": 0.2,
+          "frequency": "Dosis tunggal; dapat diulang 1× setelah 5 menit",
+          "maxSingleDoseMg": 10, "formulationIDs": ["inj1", "inj5"],
+          "administration": "IV pelan 2–3 menit. Siapkan bag-valve-mask.",
+          "notes": []
+        },
+        {
+          "id": "im", "label": "IM — kejang tanpa akses IV", "indication": "Kejang akut tanpa akses IV", "route": "intramuskular",
+          "mgPerKgMin": 0.2, "mgPerKgDefault": 0.2, "mgPerKgMax": 0.2,
+          "frequency": "Dosis tunggal",
+          "maxSingleDoseMg": 10, "formulationIDs": ["inj5"],
+          "administration": "IM di paha anterolateral. (RAMPART: 10 mg untuk > 40 kg; 5 mg untuk 13–40 kg.)",
+          "notes": []
+        },
+        {
+          "id": "intranasal", "label": "Intranasal / bukal", "indication": "Kejang akut tanpa akses IV", "route": "intranasal",
+          "mgPerKgMin": 0.2, "mgPerKgDefault": 0.2, "mgPerKgMax": 0.3,
+          "frequency": "Dosis tunggal",
+          "maxSingleDoseMg": 10, "formulationIDs": ["inj5"],
+          "administration": "Gunakan sediaan 5 mg/mL; bagi ke dua lubang hidung (maks 1 mL per lubang), pakai atomizer bila ada. Bukal: teteskan di antara gusi dan pipi.",
+          "notes": []
+        }
+      ],
+      "warnings": ["Depresi napas — monitor SpO2 dan siapkan ventilasi."],
+      "monograph": "Benzodiazepin larut air dengan onset cepat; dapat diberikan IV, IM, intranasal, atau bukal. Pilihan lini pertama kejang bila belum ada akses IV.",
+      "references": ["AES Guideline 2016", "RAMPART trial — NEJM 2012"]
+    },
+    {
+      "id": "paracetamol",
+      "name": "Paracetamol",
+      "category": "antipiretikAnalgetik",
+      "formulations": [
+        { "id": "syr120", "label": "Sirup 120 mg/5 mL", "route": "oral", "kind": "liquid", "mgPerML": 24 },
+        { "id": "syr250", "label": "Sirup forte 250 mg/5 mL", "route": "oral", "kind": "liquid", "mgPerML": 50 },
+        { "id": "drops", "label": "Drops 100 mg/mL", "route": "oral", "kind": "liquid", "mgPerML": 100 },
+        { "id": "tab500", "label": "Tablet 500 mg", "route": "oral", "kind": "unit", "mgPerUnit": 500, "unitName": "tablet", "unitDivisibility": 0.5 },
+        { "id": "supp80", "label": "Supositoria 80 mg", "route": "rektal", "kind": "unit", "mgPerUnit": 80, "unitName": "supositoria", "unitDivisibility": 1 },
+        { "id": "supp125", "label": "Supositoria 125 mg", "route": "rektal", "kind": "unit", "mgPerUnit": 125, "unitName": "supositoria", "unitDivisibility": 1 },
+        { "id": "supp250", "label": "Supositoria 250 mg", "route": "rektal", "kind": "unit", "mgPerUnit": 250, "unitName": "supositoria", "unitDivisibility": 1 },
+        { "id": "infus", "label": "Infus IV 1 g/100 mL (10 mg/mL)", "route": "intravena", "kind": "liquid", "mgPerML": 10 }
+      ],
+      "regimens": [
+        {
+          "id": "oral", "label": "Oral", "indication": "Demam / nyeri ringan–sedang", "route": "oral",
+          "mgPerKgMin": 10, "mgPerKgDefault": 15, "mgPerKgMax": 15,
+          "frequency": "Tiap 4–6 jam bila perlu (maks 4×/hari)", "dosesPerDay": 4,
+          "maxSingleDoseMg": 1000, "maxDailyDoseMg": 4000, "maxDailyMgPerKg": 60,
+          "formulationIDs": ["syr120", "syr250", "drops", "tab500"],
+          "administration": "Gunakan sendok/spuit takar. Pastikan konsentrasi sediaan sesuai (drops ≠ sirup!).",
+          "notes": ["Neonatus: 10–15 mg/kg tiap 6–8 jam (maks 60 mg/kg/hari)."]
+        },
+        {
+          "id": "rektal", "label": "Rektal", "indication": "Demam bila oral tidak memungkinkan", "route": "rektal",
+          "mgPerKgMin": 10, "mgPerKgDefault": 15, "mgPerKgMax": 20,
+          "frequency": "Tiap 6 jam bila perlu", "dosesPerDay": 4,
+          "maxSingleDoseMg": 1000, "maxDailyDoseMg": 4000, "maxDailyMgPerKg": 60,
+          "formulationIDs": ["supp80", "supp125", "supp250"],
+          "administration": "Supositoria tidak boleh dipotong; pilih kekuatan yang paling mendekati dosis tanpa melebihinya.",
+          "notes": []
+        },
+        {
+          "id": "iv-10kg", "label": "Infus IV (BB ≥ 10 kg)", "indication": "Demam/nyeri, oral tidak memungkinkan", "route": "intravena",
+          "mgPerKgMin": 10, "mgPerKgDefault": 15, "mgPerKgMax": 15,
+          "frequency": "Tiap 6 jam (interval min 4 jam)", "dosesPerDay": 4,
+          "maxSingleDoseMg": 1000, "maxDailyDoseMg": 4000, "maxDailyMgPerKg": 60, "minWeightKg": 10,
+          "formulationIDs": ["infus"],
+          "administration": "Ambil volume terhitung dari botol, infus selama 15 menit. JANGAN memberikan seluruh botol 100 mL pada anak!",
+          "notes": []
+        },
+        {
+          "id": "iv-bayi", "label": "Infus IV (BB < 10 kg, usia > 1 bln)", "indication": "Demam/nyeri, oral tidak memungkinkan", "route": "intravena",
+          "mgPerKgMin": 7.5, "mgPerKgDefault": 7.5, "mgPerKgMax": 10,
+          "frequency": "Tiap 6 jam", "dosesPerDay": 4,
+          "maxSingleDoseMg": 1000, "maxDailyDoseMg": 4000, "maxDailyMgPerKg": 30, "maxWeightKg": 10, "minAgeMonths": 1,
+          "formulationIDs": ["infus"],
+          "administration": "Ambil volume terhitung dengan spuit dari botol, infus selama 15 menit. Maks 30 mg/kg/hari.",
+          "notes": []
+        }
+      ],
+      "warnings": ["Hepatotoksik bila overdosis — cek apakah pasien sudah mendapat obat kombinasi berisi paracetamol.", "Kesalahan konsentrasi (drops 100 mg/mL vs sirup 24 mg/mL) adalah penyebab overdosis tersering."],
+      "monograph": "Analgetik-antipiretik lini pertama pada anak. Tidak memiliki efek antiinflamasi bermakna.",
+      "references": ["BNF for Children 2024–2025", "Label produsen Paracetamol infus 10 mg/mL"]
+    },
+    {
+      "id": "ibuprofen",
+      "name": "Ibuprofen",
+      "category": "antipiretikAnalgetik",
+      "formulations": [
+        { "id": "syr100", "label": "Suspensi 100 mg/5 mL", "route": "oral", "kind": "liquid", "mgPerML": 20 },
+        { "id": "syr200", "label": "Suspensi forte 200 mg/5 mL", "route": "oral", "kind": "liquid", "mgPerML": 40 },
+        { "id": "tab200", "label": "Tablet 200 mg", "route": "oral", "kind": "unit", "mgPerUnit": 200, "unitName": "tablet", "unitDivisibility": 1 },
+        { "id": "tab400", "label": "Tablet 400 mg", "route": "oral", "kind": "unit", "mgPerUnit": 400, "unitName": "tablet", "unitDivisibility": 1 }
+      ],
+      "regimens": [
+        {
+          "id": "oral", "label": "Oral", "indication": "Demam / nyeri / inflamasi", "route": "oral",
+          "mgPerKgMin": 5, "mgPerKgDefault": 10, "mgPerKgMax": 10,
+          "frequency": "Tiap 6–8 jam bila perlu", "dosesPerDay": 4,
+          "maxSingleDoseMg": 400, "maxDailyDoseMg": 2400, "maxDailyMgPerKg": 40, "minAgeMonths": 3, "minWeightKg": 5,
+          "formulationIDs": ["syr100", "syr200", "tab200", "tab400"],
+          "administration": "Berikan bersama/setelah makan atau minum.",
+          "notes": []
+        }
+      ],
+      "warnings": ["HINDARI pada suspek demam berdarah dengue (risiko perdarahan), dehidrasi, gangguan ginjal, perdarahan saluran cerna.", "Hati-hati pada asma sensitif NSAID."],
+      "monograph": "NSAID dengan efek antipiretik, analgetik, dan antiinflamasi.",
+      "references": ["BNF for Children 2024–2025", "WHO Dengue Guidelines"]
+    },
+    {
+      "id": "ketorolac",
+      "name": "Ketorolac",
+      "category": "antipiretikAnalgetik",
+      "formulations": [
+        { "id": "inj", "label": "Injeksi 30 mg/mL", "route": "intravena", "kind": "liquid", "mgPerML": 30 }
+      ],
+      "regimens": [
+        {
+          "id": "iv", "label": "IV/IM", "indication": "Nyeri sedang–berat jangka pendek", "route": "intravena",
+          "mgPerKgMin": 0.3, "mgPerKgDefault": 0.5, "mgPerKgMax": 0.5,
+          "frequency": "Tiap 6–8 jam, maks 5 hari", "dosesPerDay": 4,
+          "maxSingleDoseMg": 30, "maxDailyDoseMg": 90, "maxDailyMgPerKg": 2, "minAgeMonths": 6,
+          "formulationIDs": ["inj"],
+          "administration": "IV pelan ≥ 15 detik atau IM dalam. Banyak pedoman anak membatasi 15 mg/dosis pada BB < 50 kg.",
+          "notes": []
+        }
+      ],
+      "warnings": ["Label BPOM: tidak direkomendasikan untuk usia < 16 tahun — penggunaan pada anak bersifat off-label.", "Kontraindikasi: suspek dengue, perdarahan, gangguan ginjal, hipovolemia."],
+      "monograph": "NSAID parenteral analgetik kuat. Durasi maksimal 5 hari.",
+      "references": ["Lexicomp Pediatric Dosage Handbook", "Label BPOM Ketorolac"]
+    },
+    {
+      "id": "metamizole",
+      "name": "Metamizol (Dipiron)",
+      "category": "antipiretikAnalgetik",
+      "formulations": [
+        { "id": "syr", "label": "Sirup 250 mg/5 mL", "route": "oral", "kind": "liquid", "mgPerML": 50 },
+        { "id": "tab500", "label": "Tablet 500 mg", "route": "oral", "kind": "unit", "mgPerUnit": 500, "unitName": "tablet", "unitDivisibility": 0.5 },
+        { "id": "inj", "label": "Injeksi 1 g/2 mL (500 mg/mL)", "route": "intravena", "kind": "liquid", "mgPerML": 500 }
+      ],
+      "regimens": [
+        {
+          "id": "oral", "label": "Oral", "indication": "Demam tinggi / nyeri yang tidak respons antipiretik lain", "route": "oral",
+          "mgPerKgMin": 8, "mgPerKgDefault": 10, "mgPerKgMax": 16,
+          "frequency": "Tiap 6–8 jam bila perlu (maks 4×/hari)", "dosesPerDay": 4,
+          "maxSingleDoseMg": 1000, "maxDailyDoseMg": 4000, "minAgeMonths": 3,
+          "formulationIDs": ["syr", "tab500"],
+          "administration": "Oral.",
+          "notes": []
+        },
+        {
+          "id": "iv", "label": "IV (usia ≥ 1 tahun)", "indication": "Demam tinggi / nyeri, oral tidak memungkinkan", "route": "intravena",
+          "mgPerKgMin": 8, "mgPerKgDefault": 10, "mgPerKgMax": 16,
+          "frequency": "Tiap 6–8 jam bila perlu (maks 4×/hari)", "dosesPerDay": 4,
+          "maxSingleDoseMg": 1000, "maxDailyDoseMg": 4000, "minAgeMonths": 12,
+          "formulationIDs": ["inj"],
+          "administration": "IV SANGAT pelan (≤ 500 mg/menit), pasien berbaring; dapat diencerkan NaCl 0,9%/D5%. Usia 3–11 bulan hanya IM.",
+          "notes": []
+        }
+      ],
+      "warnings": ["Agranulositosis (jarang tetapi fatal).", "Hipotensi/anafilaksis bila IV cepat."],
+      "monograph": "Analgetik-antipiretik pirazolon. Digunakan di Indonesia untuk demam tinggi yang tidak respons paracetamol.",
+      "references": ["Label produsen Metamizole (Novalgin)"]
+    },
+    {
+      "id": "ondansetron",
+      "name": "Ondansetron",
+      "category": "antiemetik",
+      "formulations": [
+        { "id": "inj", "label": "Injeksi 4 mg/2 mL (2 mg/mL)", "route": "intravena", "kind": "liquid", "mgPerML": 2 },
+        { "id": "syr", "label": "Sirup 4 mg/5 mL", "route": "oral", "kind": "liquid", "mgPerML": 0.8 },
+        { "id": "tab4", "label": "Tablet/ODT 4 mg", "route": "oral", "kind": "unit", "mgPerUnit": 4, "unitName": "tablet", "unitDivisibility": 0.5 }
+      ],
+      "regimens": [
+        {
+          "id": "iv", "label": "IV", "indication": "Mual-muntah (gastroenteritis, pasca-operasi)", "route": "intravena",
+          "mgPerKgMin": 0.1, "mgPerKgDefault": 0.15, "mgPerKgMax": 0.15,
+          "frequency": "Tiap 8 jam bila perlu", "dosesPerDay": 3,
+          "maxSingleDoseMg": 4, "maxDailyDoseMg": 16, "minAgeMonths": 1,
+          "formulationIDs": ["inj"],
+          "administration": "IV pelan ≥ 30 detik (lebih baik 2–5 menit) atau encerkan dalam 50 mL NaCl 0,9%/D5% selama 15 menit. Dewasa: 4–8 mg.",
+          "notes": []
+        },
+        {
+          "id": "oral", "label": "Oral (dosis tetap per BB)", "indication": "Gastroenteritis dengan muntah (memfasilitasi rehidrasi oral)", "route": "oral",
+          "fixedDoseBands": [ { "minKg": 8, "maxKg": 15, "doseMg": 2 }, { "minKg": 15, "maxKg": 30, "doseMg": 4 }, { "minKg": 30, "doseMg": 8 } ],
+          "frequency": "Dosis tunggal di IGD; dapat diulang tiap 8 jam",
+          "maxSingleDoseMg": 8, "minAgeMonths": 6,
+          "formulationIDs": ["syr", "tab4"],
+          "administration": "8–15 kg: 2 mg; 15–30 kg: 4 mg; ≥ 30 kg: 8 mg (Freedman, NEJM 2006). Mulai rehidrasi oral 15–30 menit kemudian.",
+          "notes": []
+        }
+      ],
+      "warnings": ["Pemanjangan QT — hati-hati pada kelainan elektrolit/obat pemanjang QT."],
+      "monograph": "Antagonis reseptor 5-HT3. Efektif mengurangi muntah dan kebutuhan cairan IV pada gastroenteritis anak.",
+      "references": ["Freedman SB et al. NEJM 2006", "BNF for Children 2024–2025"]
+    },
+    {
+      "id": "domperidone",
+      "name": "Domperidon",
+      "category": "antiemetik",
+      "formulations": [
+        { "id": "susp", "label": "Suspensi 5 mg/5 mL", "route": "oral", "kind": "liquid", "mgPerML": 1 },
+        { "id": "drops", "label": "Drops 5 mg/mL", "route": "oral", "kind": "liquid", "mgPerML": 5 },
+        { "id": "tab10", "label": "Tablet 10 mg", "route": "oral", "kind": "unit", "mgPerUnit": 10, "unitName": "tablet", "unitDivisibility": 0.5 }
+      ],
+      "regimens": [
+        {
+          "id": "oral", "label": "Oral", "indication": "Mual-muntah", "route": "oral",
+          "mgPerKgMin": 0.25, "mgPerKgDefault": 0.25, "mgPerKgMax": 0.25,
+          "frequency": "Hingga 3×/hari, 15–30 menit sebelum makan", "dosesPerDay": 3,
+          "maxSingleDoseMg": 10, "maxDailyDoseMg": 30, "maxDailyMgPerKg": 0.75,
+          "formulationIDs": ["susp", "drops", "tab10"],
+          "administration": "Durasi sesingkat mungkin (maks 7 hari).",
+          "notes": []
+        }
+      ],
+      "warnings": ["Risiko pemanjangan QT/aritmia.", "EMA: untuk mual-muntah hanya usia ≥ 12 tahun dan BB ≥ 35 kg — pertimbangkan ondansetron pada anak kecil."],
+      "monograph": "Antagonis dopamin perifer (prokinetik/antiemetik).",
+      "references": ["EMA PRAC review 2014", "Label produsen Domperidone"]
+    },
+    {
+      "id": "ampisilin",
+      "name": "Ampisilin",
+      "category": "antibiotik",
+      "formulations": [
+        { "id": "vial1g", "label": "Vial 1 g + 10 mL aqua (≈ 100 mg/mL)", "route": "intravena", "kind": "liquid", "mgPerML": 100 }
+      ],
+      "regimens": [
+        {
+          "id": "umum", "label": "Infeksi umum / sepsis", "indication": "Sepsis, pneumonia berat (bersama gentamisin)", "route": "intravena",
+          "mgPerKgMin": 25, "mgPerKgDefault": 50, "mgPerKgMax": 50,
+          "frequency": "Tiap 6 jam", "dosesPerDay": 4,
+          "maxSingleDoseMg": 2000, "maxDailyDoseMg": 12000, "maxDailyMgPerKg": 200, "minAgeMonths": 1,
+          "formulationIDs": ["vial1g"],
+          "administration": "IV pelan 3–5 menit (≤ 500 mg) atau infus 15–30 menit dalam NaCl 0,9% (kurang stabil dalam D5%).",
+          "notes": ["Neonatus < 1 bulan: interval berbeda (tiap 8–12 jam) — gunakan formularium neonatus."]
+        },
+        {
+          "id": "meningitis", "label": "Meningitis", "indication": "Meningitis bakterial", "route": "intravena",
+          "mgPerKgMin": 75, "mgPerKgDefault": 75, "mgPerKgMax": 100,
+          "frequency": "Tiap 6 jam", "dosesPerDay": 4,
+          "maxSingleDoseMg": 2000, "maxDailyDoseMg": 12000, "maxDailyMgPerKg": 400, "minAgeMonths": 1,
+          "formulationIDs": ["vial1g"],
+          "administration": "Infus 15–30 menit dalam NaCl 0,9%.",
+          "notes": []
+        }
+      ],
+      "warnings": ["Tanyakan riwayat alergi penisilin."],
+      "monograph": "Aminopenisilin spektrum luas. Kombinasi ampisilin + gentamisin adalah terapi empiris sepsis/pneumonia berat anak (WHO).",
+      "references": ["WHO Pocket Book of Hospital Care for Children 2013", "BNF for Children 2024–2025"]
+    },
+    {
+      "id": "gentamisin",
+      "name": "Gentamisin",
+      "category": "antibiotik",
+      "formulations": [
+        { "id": "inj40", "label": "Injeksi 80 mg/2 mL (40 mg/mL)", "route": "intravena", "kind": "liquid", "mgPerML": 40 },
+        { "id": "inj10", "label": "Injeksi anak 20 mg/2 mL (10 mg/mL)", "route": "intravena", "kind": "liquid", "mgPerML": 10 }
+      ],
+      "regimens": [
+        {
+          "id": "sekali-sehari", "label": "Dosis sekali sehari (usia > 1 bulan)", "indication": "Sepsis, pneumonia berat (bersama ampisilin), ISK berat", "route": "intravena",
+          "mgPerKgMin": 5, "mgPerKgDefault": 7.5, "mgPerKgMax": 7.5,
+          "frequency": "Tiap 24 jam", "dosesPerDay": 1,
+          "maxSingleDoseMg": 500, "maxDailyMgPerKg": 7.5, "minAgeMonths": 1,
+          "formulationIDs": ["inj10", "inj40"],
+          "administration": "Encerkan dalam NaCl 0,9% (anak ± 1–2 mg/mL; dewasa 50–100 mL), infus 30–60 menit. Batas 500 mg ≈ 7 mg/kg pada dewasa 70 kg; pada obesitas gunakan BB terkoreksi.",
+          "notes": ["Neonatus: 4–5 mg/kg tiap 24–48 jam sesuai usia gestasi — gunakan formularium neonatus."]
+        }
+      ],
+      "warnings": ["Nefrotoksik & ototoksik — pantau fungsi ginjal; periksa kadar lembah bila terapi > 48 jam."],
+      "monograph": "Aminoglikosida bakterisidal untuk Gram negatif; sinergis dengan ampisilin.",
+      "references": ["WHO Pocket Book 2013", "BNF for Children 2024–2025"]
+    },
+    {
+      "id": "cefotaxime",
+      "name": "Sefotaksim (Cefotaxime)",
+      "category": "antibiotik",
+      "formulations": [
+        { "id": "vial1g", "label": "Vial 1 g + 10 mL aqua (≈ 100 mg/mL)", "route": "intravena", "kind": "liquid", "mgPerML": 100 }
+      ],
+      "regimens": [
+        {
+          "id": "umum", "label": "Infeksi berat", "indication": "Sepsis, pneumonia berat", "route": "intravena",
+          "mgPerKgMin": 25, "mgPerKgDefault": 50, "mgPerKgMax": 50,
+          "frequency": "Tiap 8 jam", "dosesPerDay": 3,
+          "maxSingleDoseMg": 2000, "maxDailyDoseMg": 12000, "maxDailyMgPerKg": 150, "minAgeMonths": 1,
+          "formulationIDs": ["vial1g"],
+          "administration": "IV pelan 3–5 menit atau infus 20–60 menit dalam NaCl 0,9%/D5%.",
+          "notes": []
+        },
+        {
+          "id": "meningitis", "label": "Meningitis", "indication": "Meningitis bakterial", "route": "intravena",
+          "mgPerKgMin": 50, "mgPerKgDefault": 75, "mgPerKgMax": 75,
+          "frequency": "Tiap 6 jam", "dosesPerDay": 4,
+          "maxSingleDoseMg": 2000, "maxDailyDoseMg": 12000, "maxDailyMgPerKg": 300, "minAgeMonths": 1,
+          "formulationIDs": ["vial1g"],
+          "administration": "Infus 20–60 menit dalam NaCl 0,9%/D5%.",
+          "notes": []
+        }
+      ],
+      "warnings": ["Tanyakan riwayat alergi beta-laktam."],
+      "monograph": "Sefalosporin generasi ketiga; pilihan pada neonatus/bayi muda (tidak berinteraksi dengan kalsium seperti seftriakson).",
+      "references": ["BNF for Children 2024–2025", "IDSA Bacterial Meningitis Guidelines"]
+    },
+    {
+      "id": "ceftriaxone",
+      "name": "Seftriakson (Ceftriaxone)",
+      "category": "antibiotik",
+      "formulations": [
+        { "id": "vial1g", "label": "Vial 1 g + 10 mL aqua (≈ 100 mg/mL)", "route": "intravena", "kind": "liquid", "mgPerML": 100 }
+      ],
+      "regimens": [
+        {
+          "id": "umum", "label": "Infeksi berat", "indication": "Sepsis, pneumonia berat, demam tifoid berat", "route": "intravena",
+          "mgPerKgMin": 50, "mgPerKgDefault": 50, "mgPerKgMax": 75,
+          "frequency": "Tiap 24 jam", "dosesPerDay": 1,
+          "maxSingleDoseMg": 2000, "maxDailyDoseMg": 2000, "minAgeMonths": 1,
+          "formulationIDs": ["vial1g"],
+          "administration": "Infus ≥ 30 menit dalam NaCl 0,9%/D5% (dosis ≥ 50 mg/kg). JANGAN bersamaan dengan larutan mengandung kalsium (Ringer Laktat) pada bayi.",
+          "notes": []
+        },
+        {
+          "id": "meningitis", "label": "Meningitis", "indication": "Meningitis bakterial", "route": "intravena",
+          "mgPerKgMin": 100, "mgPerKgDefault": 100, "mgPerKgMax": 100,
+          "frequency": "Tiap 24 jam (atau 50 mg/kg tiap 12 jam)", "dosesPerDay": 1,
+          "maxSingleDoseMg": 4000, "maxDailyDoseMg": 4000, "minAgeMonths": 1,
+          "formulationIDs": ["vial1g"],
+          "administration": "Infus ≥ 30 menit dalam NaCl 0,9%/D5%.",
+          "notes": []
+        }
+      ],
+      "warnings": ["Kontraindikasi neonatus dengan hiperbilirubinemia dan bersama kalsium IV.", "Tanyakan riwayat alergi beta-laktam."],
+      "monograph": "Sefalosporin generasi ketiga dengan waktu paruh panjang (dosis sekali sehari).",
+      "references": ["BNF for Children 2024–2025", "IDSA Bacterial Meningitis Guidelines"]
+    },
+    {
+      "id": "amoxicillin",
+      "name": "Amoksisilin",
+      "category": "antibiotik",
+      "formulations": [
+        { "id": "syr125", "label": "Sirup 125 mg/5 mL", "route": "oral", "kind": "liquid", "mgPerML": 25 },
+        { "id": "syr250", "label": "Sirup forte 250 mg/5 mL", "route": "oral", "kind": "liquid", "mgPerML": 50 },
+        { "id": "drops", "label": "Drops 100 mg/mL", "route": "oral", "kind": "liquid", "mgPerML": 100 },
+        { "id": "tab500", "label": "Kaplet/kapsul 500 mg", "route": "oral", "kind": "unit", "mgPerUnit": 500, "unitName": "kaplet", "unitDivisibility": 1 }
+      ],
+      "regimens": [
+        {
+          "id": "standar", "label": "Dosis standar (25–45 mg/kg/hari ÷ 3)", "indication": "Infeksi saluran napas, ISK, infeksi kulit ringan", "route": "oral",
+          "mgPerKgMin": 8.5, "mgPerKgDefault": 15, "mgPerKgMax": 15,
+          "frequency": "Tiap 8 jam", "dosesPerDay": 3,
+          "maxSingleDoseMg": 500, "maxDailyDoseMg": 1500, "maxDailyMgPerKg": 45,
+          "formulationIDs": ["syr125", "syr250", "drops", "tab500"],
+          "administration": "Oral, dapat bersama makanan.",
+          "notes": []
+        },
+        {
+          "id": "dosis-tinggi", "label": "Dosis tinggi (80–90 mg/kg/hari ÷ 2)", "indication": "Pneumonia komunitas, otitis media akut", "route": "oral",
+          "mgPerKgMin": 40, "mgPerKgDefault": 45, "mgPerKgMax": 45,
+          "frequency": "Tiap 12 jam", "dosesPerDay": 2,
+          "maxSingleDoseMg": 2000, "maxDailyDoseMg": 4000, "maxDailyMgPerKg": 90,
+          "formulationIDs": ["syr125", "syr250", "drops", "tab500"],
+          "administration": "Oral, dapat bersama makanan.",
+          "notes": []
+        }
+      ],
+      "warnings": ["Tanyakan riwayat alergi penisilin."],
+      "monograph": "Aminopenisilin oral; lini pertama pneumonia komunitas dan otitis media akut pada anak.",
+      "references": ["WHO Pocket Book 2013", "AAP Acute Otitis Media 2013", "BNF for Children 2024–2025"]
+    },
+    {
+      "id": "azithromycin",
+      "name": "Azitromisin",
+      "category": "antibiotik",
+      "formulations": [
+        { "id": "syr200", "label": "Sirup kering 200 mg/5 mL", "route": "oral", "kind": "liquid", "mgPerML": 40 },
+        { "id": "tab500", "label": "Tablet 500 mg", "route": "oral", "kind": "unit", "mgPerUnit": 500, "unitName": "tablet", "unitDivisibility": 1 }
+      ],
+      "regimens": [
+        {
+          "id": "hari1", "label": "Hari ke-1", "indication": "Pneumonia atipik, pertusis, faringitis (alergi penisilin)", "route": "oral",
+          "mgPerKgMin": 10, "mgPerKgDefault": 10, "mgPerKgMax": 10,
+          "frequency": "Sekali sehari (hari ke-1)", "dosesPerDay": 1,
+          "maxSingleDoseMg": 500, "maxDailyDoseMg": 500, "minAgeMonths": 6,
+          "formulationIDs": ["syr200", "tab500"],
+          "administration": "Oral sekali sehari.",
+          "notes": []
+        },
+        {
+          "id": "hari2-5", "label": "Hari ke-2 s.d. 5", "indication": "Lanjutan", "route": "oral",
+          "mgPerKgMin": 5, "mgPerKgDefault": 5, "mgPerKgMax": 5,
+          "frequency": "Sekali sehari (hari ke-2–5)", "dosesPerDay": 1,
+          "maxSingleDoseMg": 250, "maxDailyDoseMg": 250, "minAgeMonths": 6,
+          "formulationIDs": ["syr200", "tab500"],
+          "administration": "Oral sekali sehari.",
+          "notes": []
+        }
+      ],
+      "warnings": ["Pemanjangan QT.", "Bayi < 6 minggu: risiko stenosis pilorus hipertrofik."],
+      "monograph": "Makrolida dengan waktu paruh panjang.",
+      "references": ["BNF for Children 2024–2025"]
+    },
+    {
+      "id": "epinefrin-anak",
+      "name": "Epinefrin (Adrenalin)",
+      "category": "resusitasiRespirasi",
+      "formulations": [
+        { "id": "dil10000", "label": "1:10.000 (0,1 mg/mL) — 1 mL ampul 1 mg/mL + 9 mL NaCl 0,9%", "route": "intravena", "kind": "liquid", "mgPerML": 0.1 },
+        { "id": "amp1000", "label": "1:1.000 (1 mg/mL) — ampul tanpa pengenceran", "route": "intramuskular", "kind": "liquid", "mgPerML": 1 }
+      ],
+      "regimens": [
+        {
+          "id": "henti-jantung", "label": "IV/IO — henti jantung", "indication": "Henti jantung anak", "route": "intravena",
+          "mgPerKgMin": 0.01, "mgPerKgDefault": 0.01, "mgPerKgMax": 0.01,
+          "frequency": "Tiap 3–5 menit",
+          "maxSingleDoseMg": 1, "formulationIDs": ["dil10000"],
+          "administration": "0,1 mL/kg larutan 1:10.000 IV/IO bolus cepat, flush NaCl 0,9% 5–10 mL. Via ETT (bila tanpa akses): 0,1 mg/kg larutan 1:1.000.",
+          "notes": []
+        },
+        {
+          "id": "anafilaksis-im", "label": "IM — anafilaksis", "indication": "Anafilaksis", "route": "intramuskular",
+          "mgPerKgMin": 0.01, "mgPerKgDefault": 0.01, "mgPerKgMax": 0.01,
+          "frequency": "Ulangi tiap 5 menit bila belum membaik",
+          "maxSingleDoseMg": 0.5, "formulationIDs": ["amp1000"],
+          "administration": "IM paha anterolateral, larutan 1:1.000 (TIDAK diencerkan). Dosis praktis RCUK: < 6 thn 0,15 mg; 6–12 thn 0,3 mg; > 12 thn 0,5 mg.",
+          "notes": []
+        }
+      ],
+      "warnings": ["Pastikan pengenceran benar: 1:1.000 untuk IM, 1:10.000 untuk IV. Kesalahan pengenceran dapat fatal."],
+      "monograph": "Katekolamin; obat utama henti jantung dan anafilaksis pada anak.",
+      "references": ["AHA PALS 2020/2025", "Resuscitation Council UK — Anaphylaxis 2021"]
+    },
+    {
+      "id": "dexamethasone",
+      "name": "Deksametason",
+      "category": "resusitasiRespirasi",
+      "formulations": [
+        { "id": "inj", "label": "Injeksi 5 mg/mL (dapat diminum)", "route": "intravena", "kind": "liquid", "mgPerML": 5 },
+        { "id": "tab05", "label": "Tablet 0,5 mg", "route": "oral", "kind": "unit", "mgPerUnit": 0.5, "unitName": "tablet", "unitDivisibility": 1 }
+      ],
+      "regimens": [
+        {
+          "id": "croup", "label": "Croup", "indication": "Croup (laringotrakeobronkitis)", "route": "intravena",
+          "mgPerKgMin": 0.15, "mgPerKgDefault": 0.6, "mgPerKgMax": 0.6,
+          "frequency": "Dosis tunggal (dapat diulang setelah 12–24 jam)",
+          "maxSingleDoseMg": 16, "formulationIDs": ["inj", "tab05"],
+          "administration": "Oral, IM, atau IV. Croup ringan: 0,15 mg/kg cukup; croup sedang–berat: 0,6 mg/kg.",
+          "notes": []
+        },
+        {
+          "id": "asma", "label": "Serangan asma", "indication": "Eksaserbasi asma", "route": "intravena",
+          "mgPerKgMin": 0.3, "mgPerKgDefault": 0.6, "mgPerKgMax": 0.6,
+          "frequency": "Sekali sehari selama 1–2 hari", "dosesPerDay": 1,
+          "maxSingleDoseMg": 16, "maxDailyDoseMg": 16, "formulationIDs": ["inj", "tab05"],
+          "administration": "Oral/IM/IV.",
+          "notes": []
+        }
+      ],
+      "warnings": ["Hiperglikemia; hati-hati pada infeksi aktif."],
+      "monograph": "Kortikosteroid potensi tinggi dengan durasi panjang.",
+      "references": ["Bjornson CL et al. NEJM 2004", "GINA 2024"]
+    },
+    {
+      "id": "salbutamol",
+      "name": "Salbutamol",
+      "category": "resusitasiRespirasi",
+      "formulations": [
+        { "id": "neb", "label": "Nebule 2,5 mg/2,5 mL (1 mg/mL)", "route": "nebulisasi", "kind": "liquid", "mgPerML": 1 }
+      ],
+      "regimens": [
+        {
+          "id": "nebul", "label": "Nebulisasi — serangan asma/wheezing", "indication": "Serangan asma, bronkospasme", "route": "nebulisasi",
+          "fixedDoseBands": [ { "minKg": 0, "maxKg": 20, "doseMg": 2.5 }, { "minKg": 20, "doseMg": 5 } ],
+          "frequency": "Tiap 20 menit × 3 pada serangan akut, lalu sesuai respons",
+          "maxSingleDoseMg": 5, "formulationIDs": ["neb"],
+          "administration": "BB < 20 kg (± < 6 thn): 2,5 mg; ≥ 20 kg: 5 mg. Nebulisasi dengan O2 6–8 L/menit; tambahkan NaCl 0,9% hingga 3–4 mL bila perlu. Serangan berat: tambah ipratropium 250 mcg.",
+          "notes": []
+        }
+      ],
+      "warnings": ["Takikardia, tremor, hipokalemia (dosis berulang)."],
+      "monograph": "Agonis β2 kerja singkat, bronkodilator lini pertama serangan asma.",
+      "references": ["GINA 2024", "Pedoman Nasional Asma Anak IDAI"]
+    }
+  ]
+}

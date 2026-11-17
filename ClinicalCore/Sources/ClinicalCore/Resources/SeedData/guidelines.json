@@ -1,0 +1,491 @@
+{
+  "version": 1,
+  "items": [
+    {
+      "id": "code-stroke",
+      "title": "Code Stroke (Iskemik & Hemoragik)",
+      "category": "neurologi",
+      "keywords": ["stroke", "cva", "alteplase", "rtpa", "trombolisis", "nihss", "hemiparesis", "perdarahan intraserebral", "ich", "befast"],
+      "summary": "Aktivasi code stroke bila onset/last known well ≤ 24 jam. Target door-to-needle ≤ 60 menit.",
+      "sections": [
+        { "id": "target", "title": "Target Waktu (dari kedatangan)", "kind": "targets", "items": [
+          "Door-to-dokter ≤ 10 menit",
+          "Door-to-tim stroke ≤ 15 menit",
+          "Door-to-CT dimulai ≤ 20 menit (interpretasi ≤ 45 menit)",
+          "Door-to-needle (alteplase) ≤ 60 menit — ideal ≤ 45 menit",
+          "Door-to-groin (trombektomi) ≤ 90 menit",
+          "Jendela trombolisis IV: ≤ 4,5 jam dari last known well"
+        ]},
+        { "id": "langkah", "title": "Langkah Awal", "kind": "checklist", "items": [
+          "Tentukan waktu last known well (jam pasti terakhir terlihat normal).",
+          "ABC, O2 bila SpO2 < 94%, posisi kepala 0–30°.",
+          "Cek GDS SEGERA — singkirkan hipoglikemia (< 60 mg/dL) sebagai stroke mimic.",
+          "2 jalur IV, ambil darah: DL, PT/INR/APTT, elektrolit, ureum/kreatinin, troponin.",
+          "Hitung NIHSS (kalkulator di bawah).",
+          "CT scan kepala non-kontras (± CTA bila tersedia untuk oklusi pembuluh besar).",
+          "EKG 12 sadapan (jangan menunda CT/trombolisis).",
+          "Puasakan (skrining menelan sebelum asupan oral)."
+        ]},
+        { "id": "td", "title": "Target Tekanan Darah", "kind": "targets", "items": [
+          "Kandidat trombolisis: turunkan hingga < 185/110 mmHg SEBELUM alteplase",
+          "Selama & 24 jam pasca alteplase: pertahankan < 180/105 mmHg",
+          "Iskemik tanpa trombolisis: turunkan hanya bila > 220/120 mmHg (maks 15% dalam 24 jam)",
+          "Perdarahan intraserebral (TDS 150–220): target TDS ± 140 mmHg, hindari < 130 mmHg",
+          "Obat: Nicardipin 5 mg/jam, naik 2,5 mg/jam tiap 5–15 menit (maks 15 mg/jam) — lihat modul Titrasi"
+        ]},
+        { "id": "alteplase", "title": "Regimen Alteplase (rtPA)", "kind": "drugs", "items": [
+          "Dosis total 0,9 mg/kg (maks 90 mg)",
+          "10% sebagai bolus IV dalam 1 menit",
+          "90% sisanya infus kontinu dalam 60 menit",
+          "Rekonstitusi 1 mg/mL; jangan dikocok kuat",
+          "Monitor neuro & TD: tiap 15 menit (2 jam), tiap 30 menit (6 jam), tiap 1 jam hingga 24 jam",
+          "Antiplatelet/antikoagulan ditunda 24 jam pasca trombolisis (setelah CT ulang)",
+          "Alternatif bila tersedia: Tenecteplase 0,25 mg/kg bolus tunggal (maks 25 mg)"
+        ]},
+        { "id": "kontraindikasi", "title": "Kontraindikasi Utama Trombolisis", "kind": "redFlags", "items": [
+          "Perdarahan intrakranial pada CT",
+          "Onset > 4,5 jam atau tidak diketahui (tanpa imaging lanjutan)",
+          "Stroke iskemik/cedera kepala berat dalam 3 bulan",
+          "Riwayat perdarahan intrakranial, tumor/AVM intrakranial",
+          "Perdarahan aktif internal; operasi intrakranial/spinal 3 bulan",
+          "TD tetap > 185/110 setelah terapi",
+          "Trombosit < 100.000/µL, INR > 1,7, APTT memanjang, DOAC dalam 48 jam",
+          "GDS < 50 mg/dL (koreksi dulu, evaluasi ulang)"
+        ]},
+        { "id": "hemoragik", "title": "Stroke Hemoragik", "kind": "checklist", "items": [
+          "Konsul bedah saraf segera (volume > 30 mL, perdarahan serebelum > 3 cm, hidrosefalus).",
+          "Reversal antikoagulan: warfarin → vitamin K 10 mg IV + PCC (atau FFP bila PCC tidak ada).",
+          "Elevasi kepala 30°, normoglikemia (140–180 mg/dL), normotermia.",
+          "Hentikan antiplatelet/antikoagulan."
+        ]},
+        { "id": "redflag", "title": "Red Flags", "kind": "redFlags", "items": [
+          "GCS ≤ 8 → amankan jalan napas",
+          "Muntah proyektil, nyeri kepala hebat mendadak (thunderclap) → curigai SAH",
+          "Tanda herniasi: anisokor, Cushing (hipertensi + bradikardia + napas ireguler)"
+        ]}
+      ],
+      "calculators": ["nihss", "alteplase", "gcs"],
+      "references": ["AHA/ASA Acute Ischemic Stroke Guidelines 2019", "AHA/ASA Spontaneous ICH Guideline 2022", "PNPK Tata Laksana Stroke Kemenkes RI"]
+    },
+    {
+      "id": "luka-bakar",
+      "title": "Luka Bakar (Burn Injury)",
+      "category": "trauma",
+      "keywords": ["burn", "combustio", "parkland", "rule of nines", "tbsa", "trauma inhalasi", "luka bakar listrik"],
+      "summary": "Hentikan proses terbakar, amankan jalan napas, hitung %TBSA (derajat II–III), resusitasi cairan dari WAKTU KEJADIAN.",
+      "sections": [
+        { "id": "airway", "title": "Red Flags Jalan Napas / Trauma Inhalasi", "kind": "redFlags", "items": [
+          "Luka bakar wajah/leher, alis/bulu hidung terbakar",
+          "Sputum berkarbon, jelaga di mulut/orofaring",
+          "Suara serak, stridor, wheezing, sesak",
+          "Riwayat terperangkap di ruang tertutup / ledakan",
+          "Luka bakar sirkumferensial leher",
+          "→ Pertimbangkan intubasi dini (ETT besar) sebelum edema progresif",
+          "Curigai keracunan CO/sianida: O2 100% via NRM 15 L/menit (SpO2 bisa normal palsu)"
+        ]},
+        { "id": "awal", "title": "Penanganan Awal", "kind": "checklist", "items": [
+          "Hentikan proses terbakar; lepaskan pakaian & perhiasan.",
+          "Dinginkan dengan air mengalir suhu ruang 20 menit (bila < 3 jam); hindari hipotermia, jangan es.",
+          "Primary survey ATLS (cedera penyerta!).",
+          "2 jalur IV besar (boleh melalui kulit terbakar bila perlu).",
+          "Hitung %TBSA hanya derajat II (partial thickness) dan III (full thickness) — derajat I tidak dihitung.",
+          "Pasang kateter urin (TBSA ≥ 20%) untuk titrasi cairan.",
+          "Profilaksis tetanus."
+        ]},
+        { "id": "cairan", "title": "Resusitasi Cairan (Ringer Laktat)", "kind": "drugs", "items": [
+          "Parkland: 4 mL × BB (kg) × %TBSA dalam 24 jam",
+          "ATLS 10: dewasa 2 mL, anak ≤ 14 thn 3 mL, luka bakar listrik 4 mL × kg × %TBSA",
+          "½ volume dalam 8 jam pertama SEJAK WAKTU KEJADIAN (bukan sejak tiba di IGD)",
+          "½ sisanya dalam 16 jam berikutnya",
+          "Anak < 30 kg: tambahkan cairan rumatan mengandung glukosa (D5 ½NS / KAEN)",
+          "Titrasi berdasarkan produksi urin: dewasa 0,5 mL/kg/jam (30–50 mL/jam); anak < 30 kg 1 mL/kg/jam; listrik 1–1,5 mL/kg/jam"
+        ]},
+        { "id": "analgesia", "title": "Analgesia & Perawatan Luka", "kind": "drugs", "items": [
+          "Morfin 0,05–0,1 mg/kg IV titrasi (dewasa 2–4 mg bertahap) atau fentanil 1 mcg/kg",
+          "Ketamin 0,1–0,3 mg/kg IV untuk nyeri berat/prosedur",
+          "Paracetamol sebagai adjuvan",
+          "Bersihkan luka, tutup kasa non-adhesif/plastik wrap sementara",
+          "Silver sulfadiazine (hindari wajah, usia < 2 bulan, hamil aterm)",
+          "Eskarotomi bila luka bakar sirkumferensial dengan gangguan perfusi/ventilasi"
+        ]},
+        { "id": "rujuk", "title": "Kriteria Rujuk ke Unit Luka Bakar", "kind": "redFlags", "items": [
+          "Partial thickness > 10% TBSA",
+          "Wajah, tangan, kaki, genitalia, perineum, sendi besar",
+          "Full thickness berapa pun luasnya",
+          "Luka bakar listrik (termasuk petir) atau kimia",
+          "Trauma inhalasi",
+          "Komorbid berat atau trauma penyerta"
+        ]}
+      ],
+      "calculators": ["burnParkland"],
+      "references": ["ATLS 10th Edition", "American Burn Association Referral Criteria", "ISBI Practice Guidelines 2016"]
+    },
+    {
+      "id": "acls-henti-jantung",
+      "title": "ACLS — Henti Jantung (Shockable vs Non-Shockable)",
+      "category": "kardiologi",
+      "keywords": ["cardiac arrest", "henti jantung", "rjp", "cpr", "vf", "vt", "pea", "asistol", "code blue", "defibrilasi", "acls"],
+      "summary": "RJP berkualitas tinggi, defibrilasi dini untuk VF/pVT, epinefrin tiap 3–5 menit, cari dan atasi 5H 5T.",
+      "sections": [
+        { "id": "rjp", "title": "RJP Berkualitas Tinggi", "kind": "targets", "items": [
+          "Kecepatan 100–120 ×/menit, kedalaman 5–6 cm, rekoil penuh",
+          "Minimalkan interupsi (< 10 detik), fraksi kompresi > 80%",
+          "30:2 tanpa jalan napas definitif; dengan ETT/SGA: 1 napas tiap 6 detik + kompresi kontinu",
+          "Ganti kompresor tiap 2 menit",
+          "ETCO2 < 10 mmHg → perbaiki kualitas RJP; peningkatan mendadak (≥ 35–40) → curigai ROSC"
+        ]},
+        { "id": "shockable", "title": "Shockable (VF / VT tanpa nadi)", "kind": "checklist", "items": [
+          "Defibrilasi: bifasik 120–200 J (sesuai alat) / monofasik 360 J.",
+          "Segera RJP 2 menit setelah syok — jangan cek nadi dulu.",
+          "Setelah syok ke-2: Epinefrin 1 mg IV/IO, ulangi tiap 3–5 menit.",
+          "Setelah syok ke-3: Amiodaron 300 mg IV/IO; dosis ke-2 150 mg (atau lidokain 1–1,5 mg/kg).",
+          "Pertimbangkan jalan napas lanjut + kapnografi."
+        ]},
+        { "id": "nonshockable", "title": "Non-Shockable (Asistol / PEA)", "kind": "checklist", "items": [
+          "RJP 2 menit, cek irama.",
+          "Epinefrin 1 mg IV/IO SESEGERA MUNGKIN, ulangi tiap 3–5 menit.",
+          "Atasi penyebab reversibel (5H 5T).",
+          "Bila irama berubah shockable → jalur shockable."
+        ]},
+        { "id": "hst", "title": "Penyebab Reversibel (5H 5T)", "kind": "notes", "items": [
+          "Hipovolemia · Hipoksia · Hidrogen ion (asidosis) · Hipo/Hiperkalemia · Hipotermia",
+          "Tension pneumotoraks · Tamponade jantung · Toksin · Trombosis pulmonal · Trombosis koroner"
+        ]},
+        { "id": "rosc", "title": "Perawatan Pasca-ROSC", "kind": "targets", "items": [
+          "SpO2 92–98%, PaCO2 35–45 mmHg",
+          "TDS ≥ 90 mmHg, MAP ≥ 65 mmHg (cairan, norepinefrin/epinefrin)",
+          "EKG 12 sadapan — STEMI → kateterisasi segera",
+          "Kontrol suhu 32–37,5 °C; cegah demam",
+          "GDS, elektrolit, AGD; rujuk ICU/ICCU"
+        ]}
+      ],
+      "calculators": [],
+      "references": ["AHA Guidelines for CPR & ECC 2020 dan update 2025", "ERC Guidelines 2021"]
+    },
+    {
+      "id": "acls-bradikardia",
+      "title": "ACLS — Bradikardia dengan Nadi",
+      "category": "kardiologi",
+      "keywords": ["bradikardia", "bradycardia", "atropin", "pacing", "blok av", "acls"],
+      "summary": "Bradikardia (HR < 50) dengan tanda tidak stabil: atropin 1 mg, lalu dopamin/epinefrin/pacu transkutan.",
+      "sections": [
+        { "id": "tidakstabil", "title": "Tanda Tidak Stabil", "kind": "redFlags", "items": [
+          "Hipotensi / syok", "Penurunan kesadaran akut", "Nyeri dada iskemik", "Gagal jantung akut"
+        ]},
+        { "id": "tatalaksana", "title": "Tatalaksana", "kind": "checklist", "items": [
+          "ABC, O2 bila hipoksia, monitor, EKG 12 sadapan, akses IV.",
+          "Atropin 1 mg IV bolus, ulangi tiap 3–5 menit (maks 3 mg).",
+          "Bila tidak efektif: Dopamin 5–20 mcg/kg/menit ATAU Epinefrin 2–10 mcg/menit (lihat modul Titrasi).",
+          "Pacu transkutan (siapkan analgesia/sedasi).",
+          "Konsultasi kardiologi untuk pacu transvena.",
+          "Cari penyebab: iskemia (STEMI inferior), hiperkalemia, obat (β-bloker, CCB, digoksin), hipotermia."
+        ]}
+      ],
+      "calculators": [],
+      "references": ["AHA ACLS 2020/2025"]
+    },
+    {
+      "id": "acls-takikardia",
+      "title": "ACLS — Takikardia dengan Nadi",
+      "category": "kardiologi",
+      "keywords": ["takikardia", "tachycardia", "svt", "af", "vt", "kardioversi", "adenosin", "amiodaron", "acls"],
+      "summary": "Tidak stabil → kardioversi tersinkronisasi. Stabil → bedakan QRS sempit/lebar, reguler/ireguler.",
+      "sections": [
+        { "id": "kardioversi", "title": "Tidak Stabil: Kardioversi Tersinkronisasi", "kind": "targets", "items": [
+          "QRS sempit reguler (SVT/flutter): 50–100 J",
+          "QRS sempit ireguler (AF): 120–200 J bifasik",
+          "QRS lebar reguler (VT monomorfik): 100 J",
+          "QRS lebar ireguler (VT polimorfik): DEFIBRILASI (tidak tersinkronisasi)",
+          "Sedasi bila memungkinkan; naikkan energi bertahap bila gagal"
+        ]},
+        { "id": "sempit", "title": "Stabil — QRS Sempit Reguler", "kind": "checklist", "items": [
+          "Manuver vagal (modified Valsalva).",
+          "Adenosin 6 mg IV bolus CEPAT + flush 20 mL; bila gagal 12 mg.",
+          "Kontrol laju: β-bloker atau diltiazem/verapamil (hindari pada gagal jantung).",
+          "AF stabil: kontrol laju; pertimbangkan antikoagulasi."
+        ]},
+        { "id": "lebar", "title": "Stabil — QRS Lebar", "kind": "checklist", "items": [
+          "Adenosin hanya bila reguler & monomorfik.",
+          "Amiodaron 150 mg IV dalam 10 menit, ulangi bila perlu; lanjut infus 1 mg/menit (6 jam).",
+          "Konsultasi ahli; siapkan kardioversi.",
+          "Torsades de pointes: MgSO4 1–2 g IV."
+        ]}
+      ],
+      "calculators": [],
+      "references": ["AHA ACLS 2020/2025"]
+    },
+    {
+      "id": "atls-primary-survey",
+      "title": "ATLS — Primary Survey (xABCDE)",
+      "category": "trauma",
+      "keywords": ["atls", "trauma", "primary survey", "abcde", "multitrauma", "kll", "kecelakaan", "gcs"],
+      "summary": "Identifikasi dan atasi ancaman nyawa secara berurutan dalam menit pertama.",
+      "sections": [
+        { "id": "x", "title": "x — Perdarahan Masif Eksternal", "kind": "checklist", "items": [
+          "Tekan langsung, balut tekan, torniket ekstremitas bila perlu (catat jam)."
+        ]},
+        { "id": "a", "title": "A — Airway + Proteksi Servikal", "kind": "checklist", "items": [
+          "Nilai patensi: bicara, stridor, darah/muntahan.",
+          "Chin lift/jaw thrust, suction, OPA/NPA (NPA kontraindikasi pada curiga fraktur basis kranii).",
+          "Jalan napas definitif bila GCS ≤ 8, obstruksi, atau tidak mampu proteksi.",
+          "Imobilisasi servikal manual in-line / collar."
+        ]},
+        { "id": "b", "title": "B — Breathing & Ventilasi", "kind": "checklist", "items": [
+          "Inspeksi, palpasi, perkusi, auskultasi; SpO2, RR.",
+          "Atasi segera: tension pneumotoraks, open pneumothorax (balut 3 sisi), flail chest, hemotoraks masif.",
+          "O2 high-flow."
+        ]},
+        { "id": "c", "title": "C — Sirkulasi & Kontrol Perdarahan", "kind": "checklist", "items": [
+          "2 IV kateter besar (14–16G) / IO; ambil darah + crossmatch.",
+          "Kristaloid hangat 1 L (anak 20 mL/kg) lalu evaluasi respons; transfusi dini bila tidak respons.",
+          "Sumber perdarahan: dada, abdomen (eFAST), pelvis (bebat pelvis), tulang panjang, eksternal.",
+          "Asam traneksamat 1 g IV dalam 10 menit (≤ 3 jam dari trauma), lalu 1 g dalam 8 jam."
+        ]},
+        { "id": "d", "title": "D — Disability", "kind": "checklist", "items": [
+          "GCS (kalkulator di bawah), pupil, lateralisasi.",
+          "Cek GDS."
+        ]},
+        { "id": "e", "title": "E — Exposure / Environment", "kind": "checklist", "items": [
+          "Buka seluruh pakaian, log-roll; cegah hipotermia (selimut, cairan hangat)."
+        ]},
+        { "id": "adjunct", "title": "Adjuvan Primary Survey", "kind": "notes", "items": [
+          "Monitor EKG, SpO2, ETCO2, AGD",
+          "Kateter urin (kontraindikasi bila darah di meatus/curiga cedera uretra)",
+          "NGT/OGT (OGT bila curiga fraktur basis kranii)",
+          "Foto toraks & pelvis AP, eFAST"
+        ]}
+      ],
+      "calculators": ["gcs"],
+      "references": ["ATLS 10th/11th Edition — American College of Surgeons"]
+    },
+    {
+      "id": "atls-syok-hemoragik",
+      "title": "ATLS — Syok Hemoragik",
+      "category": "trauma",
+      "keywords": ["syok hemoragik", "hemorrhagic shock", "transfusi", "mtp", "kelas syok", "asam traneksamat", "permissive hypotension"],
+      "summary": "Klasifikasi derajat kehilangan darah dan resusitasi berbasis produk darah.",
+      "sections": [
+        { "id": "kelas", "title": "Klasifikasi (ATLS 10)", "kind": "table", "items": [
+          "Parameter | Kelas I | Kelas II | Kelas III | Kelas IV",
+          "Kehilangan darah | < 15% | 15–30% | 31–40% | > 40%",
+          "Nadi | Normal | Normal/↑ | ↑ | ↑↑",
+          "TD sistolik | Normal | Normal | Normal/↓ | ↓",
+          "Tekanan nadi | Normal | ↓ | ↓ | ↓",
+          "Laju napas | Normal | Normal | Normal/↑ | ↑",
+          "Urin | Normal | Normal | ↓ | ↓↓",
+          "GCS | Normal | Normal | ↓ | ↓",
+          "Base deficit | 0 s/d -2 | -2 s/d -6 | -6 s/d -10 | ≤ -10",
+          "Produk darah | Monitor | Pertimbangkan | Ya | Protokol transfusi masif"
+        ]},
+        { "id": "resus", "title": "Resusitasi Hemostatik", "kind": "checklist", "items": [
+          "Kontrol sumber perdarahan adalah prioritas (operasi/angioembolisasi/bebat pelvis).",
+          "Batasi kristaloid (maks 1 L), transfusi dini PRC.",
+          "Rasio seimbang PRC : FFP : Trombosit ≈ 1 : 1 : 1 pada perdarahan masif.",
+          "Asam traneksamat 1 g IV dalam 10 menit (≤ 3 jam), lalu 1 g dalam 8 jam.",
+          "Kalsium glukonas 10% 10–30 mL bila transfusi masif (cegah hipokalsemia).",
+          "Cegah triad letal: hipotermia, asidosis, koagulopati."
+        ]},
+        { "id": "target", "title": "Target Hemodinamik", "kind": "targets", "items": [
+          "Permissive hypotension: TDS 80–90 mmHg / MAP 50–65 (trauma tembus tanpa cedera otak)",
+          "Cedera otak traumatik: TDS ≥ 100–110 mmHg / MAP ≥ 80",
+          "Urin ≥ 0,5 mL/kg/jam (anak 1 mL/kg/jam)"
+        ]}
+      ],
+      "calculators": [],
+      "references": ["ATLS 10th Edition", "CRASH-2 Trial (Lancet 2010)"]
+    },
+    {
+      "id": "atls-tension-tamponade",
+      "title": "ATLS — Tension Pneumotoraks & Tamponade Jantung",
+      "category": "trauma",
+      "keywords": ["tension pneumotoraks", "needle decompression", "tamponade", "perikardiosentesis", "chest tube", "wsd", "trias beck"],
+      "summary": "Diagnosis klinis — jangan menunggu foto toraks.",
+      "sections": [
+        { "id": "tension", "title": "Tension Pneumotoraks", "kind": "checklist", "items": [
+          "Tanda: distres napas, hipotensi, suara napas hilang unilateral, hipersonor, deviasi trakea (lambat), JVP ↑.",
+          "Dekompresi jarum: dewasa ICS 4–5 anterior garis midaksila; anak ICS 2 garis midklavikula.",
+          "Alternatif: finger thoracostomy (pasien terintubasi).",
+          "Lanjutkan chest tube (WSD) ICS 5 anterior garis midaksila."
+        ]},
+        { "id": "tamponade", "title": "Tamponade Jantung", "kind": "checklist", "items": [
+          "Trias Beck: hipotensi, JVP meningkat, suara jantung menjauh; pulsus paradoksus.",
+          "Konfirmasi dengan eFAST (efusi perikard).",
+          "Resusitasi cairan sementara untuk meningkatkan preload.",
+          "Perikardiosentesis guided USG sebagai tindakan sementara; konsul bedah toraks (torakotomi/perikardiotomi)."
+        ]},
+        { "id": "redflag", "title": "Red Flags", "kind": "redFlags", "items": [
+          "PEA pada trauma toraks → curigai tension/tamponade, lakukan dekompresi bilateral"
+        ]}
+      ],
+      "calculators": [],
+      "references": ["ATLS 10th Edition"]
+    },
+    {
+      "id": "status-epileptikus",
+      "title": "Status Epileptikus",
+      "category": "neurologi",
+      "keywords": ["kejang", "seizure", "status epileptikus", "diazepam", "fenitoin", "midazolam", "konvulsi", "se"],
+      "summary": "Kejang ≥ 5 menit atau kejang berulang tanpa pemulihan kesadaran. Gunakan Code Timer mode Status Epileptikus.",
+      "sections": [
+        { "id": "fase0", "title": "0–5 Menit · Stabilisasi", "kind": "checklist", "items": [
+          "Catat waktu onset kejang (mulai timer).",
+          "ABC: posisi miring, suction, O2; monitor SpO2, EKG, TD.",
+          "Cek GDS: bila < 60 mg/dL → dewasa tiamin 100 mg IV lalu D40% 50 mL; anak D10% 2–5 mL/kg.",
+          "Akses IV; ambil darah: elektrolit (Na, Ca, Mg), DL, fungsi hati/ginjal, kadar OAE, toksikologi."
+        ]},
+        { "id": "fase1", "title": "5–20 Menit · Terapi Awal (Benzodiazepin)", "kind": "drugs", "items": [
+          "Diazepam IV 0,15–0,2 mg/kg (dewasa 10 mg; anak 0,2–0,3 mg/kg, maks 10 mg), kecepatan ≤ 2–5 mg/menit; dapat diulang 1×",
+          "Tanpa akses IV: Midazolam IM 10 mg (> 40 kg) / 5 mg (13–40 kg) / 0,2 mg/kg anak",
+          "Atau diazepam rektal: anak < 12 kg 5 mg, ≥ 12 kg 10 mg",
+          "Maksimal 2 dosis benzodiazepin"
+        ]},
+        { "id": "fase2", "title": "20–40 Menit · Terapi Lini Kedua", "kind": "drugs", "items": [
+          "Fenitoin 20 mg/kg IV dalam NaCl 0,9% (maks 1.000–1.500 mg), kecepatan ≤ 50 mg/menit (anak ≤ 1 mg/kg/menit)",
+          "ATAU Levetirasetam 60 mg/kg IV (maks 4.500 mg) dalam 10–15 menit",
+          "ATAU Asam valproat 40 mg/kg IV (maks 3.000 mg) dalam 10 menit (hindari pada penyakit hati/mitokondria, < 2 thn)",
+          "ATAU Fenobarbital 15–20 mg/kg IV bila lainnya tidak tersedia"
+        ]},
+        { "id": "fase3", "title": "> 40 Menit · Status Epileptikus Refrakter", "kind": "checklist", "items": [
+          "Konsultasi ICU/anestesi; intubasi.",
+          "Anestesi kontinu: Midazolam 0,2 mg/kg bolus lalu 0,05–2 mg/kg/jam; atau Propofol; atau Tiopental.",
+          "Monitoring EEG kontinu bila tersedia."
+        ]},
+        { "id": "redflag", "title": "Red Flags", "kind": "redFlags", "items": [
+          "Depresi napas setelah benzodiazepin berulang — siapkan BVM",
+          "Kejang + demam + kaku kuduk → curigai meningitis/ensefalitis (antibiotik empiris jangan ditunda)",
+          "Eklampsia pada ibu hamil → MgSO4 4–6 g IV loading"
+        ]}
+      ],
+      "calculators": ["gcs"],
+      "references": ["American Epilepsy Society Guideline 2016", "Rekomendasi Penatalaksanaan Status Epileptikus IDAI 2016", "Neurocritical Care Society 2012"]
+    },
+    {
+      "id": "anafilaksis",
+      "title": "Anafilaksis",
+      "category": "alergiImunologi",
+      "keywords": ["anafilaksis", "anaphylaxis", "alergi", "syok anafilaktik", "epinefrin im", "urtikaria", "angioedema"],
+      "summary": "Epinefrin IM adalah terapi lini pertama — jangan ditunda untuk antihistamin/steroid.",
+      "sections": [
+        { "id": "kenali", "title": "Kenali", "kind": "redFlags", "items": [
+          "Onset akut (menit–jam) setelah paparan alergen",
+          "Gangguan jalan napas (edema laring, stridor), napas (wheezing, sesak) dan/atau sirkulasi (hipotensi, syok)",
+          "Biasanya disertai kelainan kulit/mukosa (urtikaria, angioedema) — tetapi bisa tidak ada"
+        ]},
+        { "id": "tatalaksana", "title": "Tatalaksana Segera", "kind": "checklist", "items": [
+          "Hentikan pajanan alergen; panggil bantuan.",
+          "EPINEFRIN IM 1:1.000 (1 mg/mL) 0,01 mg/kg di paha anterolateral: dewasa 0,5 mg; anak 6–12 thn 0,3 mg; < 6 thn 0,15 mg. Ulangi tiap 5 menit.",
+          "Posisi berbaring + tungkai diangkat (sesak: setengah duduk; hamil: miring kiri). JANGAN tiba-tiba didudukkan/berdiri.",
+          "O2 high-flow.",
+          "Cairan kristaloid bolus: dewasa 500–1.000 mL; anak 10 mL/kg — ulangi sesuai respons.",
+          "Monitor SpO2, EKG, TD."
+        ]},
+        { "id": "refrakter", "title": "Anafilaksis Refrakter (tidak membaik setelah 2 dosis IM)", "kind": "drugs", "items": [
+          "Infus epinefrin dosis rendah 0,05–0,1 mcg/kg/menit, titrasi (lihat modul Titrasi)",
+          "Pasien dengan β-bloker: Glukagon 1–2 mg IV (anak 20–30 mcg/kg, maks 1 mg) tiap 5 menit",
+          "Konsultasi ICU/anestesi; siapkan jalan napas sulit"
+        ]},
+        { "id": "adjuvan", "title": "Terapi Adjuvan (setelah epinefrin)", "kind": "notes", "items": [
+          "Antihistamin (cetirizine oral / difenhidramin IV) hanya untuk gejala kulit",
+          "Kortikosteroid tidak rutin; pertimbangkan pada asma/refrakter",
+          "Nebulisasi salbutamol untuk bronkospasme persisten",
+          "Observasi minimal 6–12 jam (risiko reaksi bifasik); edukasi & rujuk alergi"
+        ]}
+      ],
+      "calculators": [],
+      "references": ["Resuscitation Council UK — Emergency Treatment of Anaphylaxis 2021", "WAO Anaphylaxis Guidance 2020"]
+    },
+    {
+      "id": "sindrom-koroner-akut",
+      "title": "Sindrom Koroner Akut (STEMI / NSTEMI)",
+      "category": "kardiologi",
+      "keywords": ["ska", "acs", "stemi", "nstemi", "infark miokard", "ami", "nyeri dada", "trombolitik", "streptokinase", "pci"],
+      "summary": "EKG ≤ 10 menit. STEMI → reperfusi segera (PCI primer atau fibrinolitik).",
+      "sections": [
+        { "id": "target", "title": "Target Waktu", "kind": "targets", "items": [
+          "EKG 12 sadapan ≤ 10 menit dari kedatangan",
+          "PCI primer: door-to-device ≤ 90 menit (≤ 120 menit dari diagnosis bila transfer)",
+          "Bila PCI tidak tercapai ≤ 120 menit: fibrinolitik door-to-needle ≤ 30 menit (onset ≤ 12 jam)",
+          "Pasca fibrinolitik: transfer ke PCI-capable center (angiografi 2–24 jam; rescue PCI bila gagal reperfusi)"
+        ]},
+        { "id": "awal", "title": "Terapi Awal", "kind": "drugs", "items": [
+          "Aspirin 160–320 mg dikunyah (loading)",
+          "Clopidogrel 300–600 mg (fibrinolitik: 300 mg; usia > 75 thn: 75 mg) ATAU Ticagrelor 180 mg (PCI primer)",
+          "Nitrat SL (ISDN 5 mg / NTG 0,4 mg) tiap 5 menit maks 3× bila TDS > 90 dan bukan infark ventrikel kanan",
+          "O2 hanya bila SpO2 < 90%",
+          "Morfin 2–4 mg IV bila nyeri refrakter (hati-hati, menunda efek antiplatelet oral)",
+          "Antikoagulan: Enoksaparin 30 mg IV bolus lalu 1 mg/kg SK tiap 12 jam (< 75 thn) ATAU Fondaparinux 2,5 mg SK ATAU UFH 60 U/kg bolus (maks 4.000 U) + 12 U/kg/jam (maks 1.000 U/jam)"
+        ]},
+        { "id": "fibrinolitik", "title": "Fibrinolitik (STEMI)", "kind": "drugs", "items": [
+          "Streptokinase 1,5 juta U dalam 100 mL NaCl 0,9%/D5% selama 30–60 menit",
+          "Alteplase: 15 mg bolus, 0,75 mg/kg (maks 50 mg) dalam 30 menit, lalu 0,5 mg/kg (maks 35 mg) dalam 60 menit",
+          "Tenecteplase bolus tunggal berdasarkan BB (usia ≥ 75 thn: ½ dosis)",
+          "Kontraindikasi absolut: riwayat perdarahan intrakranial, stroke iskemik < 6 bulan, lesi intrakranial, perdarahan aktif, diseksi aorta, trauma kepala/operasi besar < 1 bulan"
+        ]},
+        { "id": "nstemi", "title": "NSTE-ACS: Stratifikasi Risiko", "kind": "checklist", "items": [
+          "Troponin serial (0/1 jam atau 0/3 jam dengan hs-troponin).",
+          "Skor HEART / GRACE / TIMI.",
+          "Invasif segera (< 2 jam): hemodinamik tidak stabil, nyeri refrakter, aritmia mengancam nyawa, komplikasi mekanik, gagal jantung akut, depresi ST > 1 mm di ≥ 6 sadapan + elevasi aVR.",
+          "Invasif dini (< 24 jam): NSTEMI terdiagnosis, perubahan ST dinamis, GRACE > 140."
+        ]},
+        { "id": "redflag", "title": "Red Flags", "kind": "redFlags", "items": [
+          "Syok kardiogenik (TDS < 90, akral dingin, oliguria)",
+          "VT/VF — siapkan defibrilator",
+          "Infark ventrikel kanan (STEMI inferior + V4R): hindari nitrat, beri cairan",
+          "Curigai diseksi aorta sebelum antikoagulan/fibrinolitik (nyeri merobek, beda TD lengan)"
+        ]}
+      ],
+      "calculators": [],
+      "references": ["ESC Guidelines for the management of ACS 2023", "PERKI Pedoman Tatalaksana SKA 2018/2024"]
+    },
+    {
+      "id": "koreksi-elektrolit",
+      "title": "Koreksi Elektrolit (Hiponatremia & Hipokalemia)",
+      "category": "metabolik",
+      "keywords": ["hiponatremia", "hipokalemia", "natrium", "kalium", "kcl", "nacl 3%", "elektrolit", "ods", "defisit natrium"],
+      "summary": "Koreksi natrium perlahan (≤ 8–10 mmol/L/24 jam). KCl tidak boleh bolus; batasi laju & konsentrasi.",
+      "sections": [
+        { "id": "na-berat", "title": "Hiponatremia dengan Gejala Berat", "kind": "checklist", "items": [
+          "Gejala berat: kejang, penurunan kesadaran, muntah berat, distres kardiorespirasi.",
+          "NaCl 3% 150 mL IV dalam 20 menit (anak 2 mL/kg, maks 100 mL).",
+          "Cek Na setelah 20 menit; ulangi 150 mL hingga 2–3× sampai Na naik 5 mmol/L atau gejala membaik.",
+          "Setelah itu: batasi kenaikan total ≤ 10 mmol/L dalam 24 jam pertama (≤ 8 bila risiko tinggi ODS)."
+        ]},
+        { "id": "na-batas", "title": "Batas Koreksi Natrium", "kind": "targets", "items": [
+          "≤ 10 mmol/L dalam 24 jam pertama; ≤ 18 mmol/L dalam 48 jam",
+          "Risiko tinggi ODS (alkoholisme, malnutrisi, hipokalemia, penyakit hati, Na ≤ 105): ≤ 8 mmol/L/24 jam",
+          "Koreksi berlebih → hentikan, beri D5% ± desmopresin (konsultasi)",
+          "Hiponatremia hipervolemik (gagal jantung/sirosis): restriksi cairan ± diuretik, bukan NaCl"
+        ]},
+        { "id": "k", "title": "Hipokalemia", "kind": "checklist", "items": [
+          "Berat: K < 2,5 mEq/L, atau ada gejala/perubahan EKG (gelombang U, aritmia).",
+          "KCl TIDAK PERNAH diberikan bolus/IV push.",
+          "Perifer: laju maks 10 mEq/jam, konsentrasi ≤ 40 mEq/L (mis. 20 mEq dalam 500 mL).",
+          "Sentral (CVC) + monitor EKG: maks 20 mEq/jam (hingga 40 mEq/jam hanya pada kondisi mengancam nyawa).",
+          "Anak: 0,5–1 mEq/kg/dosis (maks 40 mEq), laju maks 0,5 mEq/kg/jam.",
+          "Setiap 10 mEq KCl menaikkan K serum ± 0,1 mEq/L (bervariasi).",
+          "Periksa dan koreksi magnesium (hipomagnesemia membuat hipokalemia refrakter).",
+          "Sediaan KCl 7,46%: 1 mEq/mL (25 mL = 25 mEq)."
+        ]}
+      ],
+      "calculators": ["sodiumCorrection", "potassiumDrip"],
+      "references": ["European Clinical Practice Guideline on Hyponatraemia 2014", "Adrogué HJ, Madias NE. NEJM 2000", "BNF — Potassium chloride"]
+    },
+    {
+      "id": "skala-gcs",
+      "title": "Glasgow Coma Scale (Dewasa & Pediatri)",
+      "category": "umum",
+      "keywords": ["gcs", "glasgow", "kesadaran", "koma", "penurunan kesadaran"],
+      "summary": "Penilaian tingkat kesadaran E-V-M; GCS ≤ 8 indikasi jalan napas definitif.",
+      "sections": [
+        { "id": "interpretasi", "title": "Interpretasi", "kind": "targets", "items": [
+          "13–15: cedera otak ringan",
+          "9–12: cedera otak sedang",
+          "≤ 8: cedera otak berat — amankan jalan napas definitif",
+          "Terintubasi: laporkan verbal sebagai 'T' (mis. E2VTM4)"
+        ]}
+      ],
+      "calculators": ["gcs"],
+      "references": ["Teasdale G, Jennett B. Lancet 1974", "ATLS 10th Edition"]
+    }
+  ]
+}

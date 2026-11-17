@@ -1,0 +1,53 @@
+name: iOS CI
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  clinical-core-tests:
+    name: ClinicalCore unit tests (math engine)
+    runs-on: macos-15
+    steps:
+      - uses: actions/checkout@v4
+      - name: Swift version
+        run: swift --version
+      - name: Run unit tests
+        run: swift test --package-path ClinicalCore
+
+  ios-app:
+    name: Build & test iOS app (Simulator)
+    runs-on: macos-15
+    steps:
+      - uses: actions/checkout@v4
+      - name: Select latest Xcode
+        run: sudo xcode-select -s "$(ls -d /Applications/Xcode*.app | sort -V | tail -n 1)"
+      - name: Install XcodeGen
+        run: brew install xcodegen
+      - name: Generate Xcode project
+        run: xcodegen generate
+      - name: Pick an available iPhone simulator
+        id: sim
+        run: |
+          UDID=$(xcrun simctl list devices available -j | python3 -c "import json,sys; d=json.load(sys.stdin)['devices']; print(next(x['udid'] for k,v in sorted(d.items(), reverse=True) if 'iOS' in k for x in v if x['name'].startswith('iPhone')))")
+          echo "udid=$UDID" >> "$GITHUB_OUTPUT"
+      - name: Build & run app tests
+        run: |
+          set -o pipefail
+          xcodebuild test \
+            -project ResusIGD.xcodeproj \
+            -scheme ResusIGD \
+            -destination "id=${{ steps.sim.outputs.udid }}" \
+            CODE_SIGNING_ALLOWED=NO | tee build.log
+      - name: Fail on Swift compiler warnings in project sources
+        run: |
+          if grep -E "/(ResusIGD|ResusIGDTests|ClinicalCore)/.*\.swift:[0-9]+:[0-9]+: warning" build.log; then
+            echo "::error::Compiler warnings found"; exit 1
+          fi
+      - name: Upload build log
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: build-log
+          path: build.log

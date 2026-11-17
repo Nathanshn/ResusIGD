@@ -1,0 +1,411 @@
+{
+  "version": 1,
+  "items": [
+    {
+      "id": "norepinefrin",
+      "name": "Norepinefrin",
+      "drugClass": "Vasopresor (agonis α1 > β1)",
+      "isHighAlert": true,
+      "ampoule": { "mg": 4, "mL": 4 },
+      "defaultAmpouleCount": 1,
+      "defaultFinalVolumeML": 50,
+      "concentrationDisplayUnit": "mcgPerML",
+      "diluentRules": [
+        { "diluent": "dextrose5", "status": "preferred", "note": "Label produsen menganjurkan D5% (dekstrosa melindungi norepinefrin dari oksidasi)." },
+        { "diluent": "nacl09", "status": "compatible", "note": "NaCl 0,9% dapat digunakan (data stabilitas memadai), namun label produsen menganjurkan D5%." }
+      ],
+      "peripheralMaxConcentrationMgPerML": 0.016,
+      "centralLinePreferred": true,
+      "extravasationWarning": "Vesikan kuat: ekstravasasi → nekrosis. Hentikan infus, aspirasi sisa obat, infiltrasi fentolamin 5–10 mg dalam 10 mL NaCl 0,9% di area (bila tersedia), elevasi ekstremitas.",
+      "regimens": [
+        {
+          "id": "infus-syok",
+          "label": "Infus kontinu — syok (septik/kardiogenik)",
+          "indication": "Syok dengan MAP < 65 mmHg setelah/selama resusitasi cairan",
+          "mode": "infusion",
+          "unit": "mcgPerKgPerMin",
+          "minDose": 0.01,
+          "maxDose": 0.5,
+          "defaultDose": 0.05,
+          "step": 0.01,
+          "hardCeilingDose": 1.0,
+          "administration": "Mulai 0,05–0,1 mcg/kg/menit; titrasi ±0,02–0,05 mcg/kg/menit tiap 5–15 menit hingga MAP ≥ 65 mmHg.",
+          "notes": [
+            "Dosis > 0,25–0,5 mcg/kg/menit: pertimbangkan vasopresor kedua (vasopresin/epinefrin) dan konsultasi ICU.",
+            "Pantau TD tiap 5–15 menit selama titrasi; idealnya arterial line."
+          ]
+        }
+      ],
+      "preparationNotes": [
+        "Jangan diberikan bolus. Gunakan jalur infus tersendiri.",
+        "Jangan dicampur dengan natrium bikarbonat/larutan alkali (inaktivasi).",
+        "Siapkan sediaan pengganti sebelum habis — hindari jeda (rebound hipotensi)."
+      ],
+      "monograph": "Katekolamin dengan efek dominan α1 (vasokonstriksi) dan β1 ringan. Vasopresor lini pertama untuk syok septik (Surviving Sepsis Campaign) dan pilihan utama pada syok kardiogenik dengan hipotensi berat. Efek samping: iskemia perifer/mesenterika, aritmia, nekrosis jaringan bila ekstravasasi.",
+      "references": ["Surviving Sepsis Campaign 2021", "Label produsen Norepinephrine bitartrate", "Tian DH et al. 2020 — peripheral vasopressor safety"]
+    },
+    {
+      "id": "dopamin",
+      "name": "Dopamin",
+      "drugClass": "Inotropik/vasopresor (dopaminergik, β1, α1 dosis-dependen)",
+      "isHighAlert": true,
+      "ampoule": { "mg": 200, "mL": 5 },
+      "defaultAmpouleCount": 1,
+      "defaultFinalVolumeML": 50,
+      "concentrationDisplayUnit": "mcgPerML",
+      "diluentRules": [
+        { "diluent": "nacl09", "status": "compatible", "note": "Kompatibel." },
+        { "diluent": "dextrose5", "status": "compatible", "note": "Kompatibel." }
+      ],
+      "peripheralMaxConcentrationMgPerML": 3.2,
+      "centralLinePreferred": true,
+      "extravasationWarning": "Vesikan: ekstravasasi → nekrosis. Hentikan infus, infiltrasi fentolamin 5–10 mg dalam 10 mL NaCl 0,9% (bila tersedia).",
+      "regimens": [
+        {
+          "id": "infus-hemodinamik",
+          "label": "Infus kontinu — syok / bradikardia simtomatik",
+          "indication": "Hipotensi/syok; bradikardia simtomatik refrakter atropin (ACLS)",
+          "mode": "infusion",
+          "unit": "mcgPerKgPerMin",
+          "minDose": 2,
+          "maxDose": 20,
+          "defaultDose": 5,
+          "step": 0.5,
+          "hardCeilingDose": 20,
+          "administration": "Mulai 2–5 mcg/kg/menit; titrasi 1–4 mcg/kg/menit tiap 10–30 menit. Bradikardia simtomatik (ACLS): 5–20 mcg/kg/menit.",
+          "notes": [
+            "Dosis > 10 mcg/kg/menit dominan efek α (vasokonstriksi) dan risiko takiaritmia meningkat.",
+            "Pada syok septik, norepinefrin lebih dianjurkan (risiko aritmia dopamin lebih tinggi)."
+          ]
+        }
+      ],
+      "preparationNotes": [
+        "Inaktif dalam larutan alkali: jangan dicampur natrium bikarbonat.",
+        "Larutan berubah warna (kuning/coklat) → jangan digunakan."
+      ],
+      "monograph": "Prekursor norepinefrin dengan efek dosis-dependen: dopaminergik (< 3–5 mcg/kg/menit), β1 inotropik (5–10), α1 vasokonstriksi (> 10). Dosis 'renal' tidak terbukti melindungi ginjal. Efek samping: takiaritmia, iskemia, nekrosis bila ekstravasasi.",
+      "references": ["AHA ACLS 2020/2025 — Bradikardia", "Label produsen Dopamine HCl"]
+    },
+    {
+      "id": "dobutamin",
+      "name": "Dobutamin",
+      "drugClass": "Inotropik (agonis β1)",
+      "isHighAlert": true,
+      "ampoule": { "mg": 250, "mL": 5 },
+      "defaultAmpouleCount": 1,
+      "defaultFinalVolumeML": 50,
+      "concentrationDisplayUnit": "mcgPerML",
+      "diluentRules": [
+        { "diluent": "nacl09", "status": "compatible", "note": "Kompatibel." },
+        { "diluent": "dextrose5", "status": "compatible", "note": "Kompatibel." }
+      ],
+      "peripheralMaxConcentrationMgPerML": 5,
+      "centralLinePreferred": false,
+      "extravasationWarning": "Iritan: pantau lokasi infus; ekstravasasi dapat menyebabkan inflamasi lokal.",
+      "regimens": [
+        {
+          "id": "infus-inotropik",
+          "label": "Infus kontinu — inotropik",
+          "indication": "Curah jantung rendah / syok kardiogenik dengan perfusi buruk (bersama vasopresor bila hipotensi)",
+          "mode": "infusion",
+          "unit": "mcgPerKgPerMin",
+          "minDose": 2,
+          "maxDose": 20,
+          "defaultDose": 5,
+          "step": 0.5,
+          "hardCeilingDose": 40,
+          "administration": "Mulai 2–5 mcg/kg/menit; titrasi 1–2 mcg/kg/menit tiap 10–30 menit sesuai perfusi, laju jantung, dan tekanan darah.",
+          "notes": [
+            "Dapat menyebabkan hipotensi (vasodilatasi β2) — koreksi hipovolemia dan pertimbangkan norepinefrin bila MAP < 65 mmHg.",
+            "Waspadai takiaritmia dan iskemia miokard."
+          ]
+        }
+      ],
+      "preparationNotes": [
+        "Jangan dicampur natrium bikarbonat/larutan alkali.",
+        "Warna larutan sedikit merah muda masih dapat diterima (oksidasi ringan)."
+      ],
+      "monograph": "Agonis β1 dengan efek inotropik kuat, kronotropik ringan, dan vasodilatasi β2 ringan. Diindikasikan untuk curah jantung rendah/hipoperfusi pada gagal jantung atau syok kardiogenik. Bukan vasopresor.",
+      "references": ["ESC Heart Failure Guidelines 2021", "Label produsen Dobutamine HCl"]
+    },
+    {
+      "id": "epinefrin",
+      "name": "Epinefrin (Adrenalin)",
+      "drugClass": "Katekolamin (agonis α & β)",
+      "isHighAlert": true,
+      "ampoule": { "mg": 1, "mL": 1 },
+      "defaultAmpouleCount": 2,
+      "defaultFinalVolumeML": 50,
+      "concentrationDisplayUnit": "mcgPerML",
+      "diluentRules": [
+        { "diluent": "dextrose5", "status": "preferred", "note": "Label produsen menganjurkan D5% untuk infus kontinu (stabilitas lebih baik)." },
+        { "diluent": "nacl09", "status": "compatible", "note": "NaCl 0,9% dapat digunakan untuk infus jangka pendek; D5% lebih dianjurkan." }
+      ],
+      "peripheralMaxConcentrationMgPerML": 0.016,
+      "centralLinePreferred": true,
+      "extravasationWarning": "Vesikan: ekstravasasi infus → nekrosis. Hentikan infus, pertimbangkan infiltrasi fentolamin (bila tersedia), elevasi.",
+      "regimens": [
+        {
+          "id": "bolus-henti-jantung",
+          "label": "Bolus — henti jantung",
+          "indication": "Henti jantung (VF/pVT setelah syok ke-2; asistol/PEA sesegera mungkin)",
+          "mode": "bolus",
+          "minDose": 1,
+          "maxDose": 1,
+          "defaultDose": 1,
+          "step": 1,
+          "repeatInterval": "tiap 3–5 menit",
+          "administration": "1 mg (1 mL ampul 1 mg/mL) IV/IO bolus cepat, lalu flush 20 mL NaCl 0,9% dan elevasi ekstremitas.",
+          "notes": ["Catat setiap pemberian di Code Timer untuk pengingat 3–5 menit."]
+        },
+        {
+          "id": "bolus-anafilaksis-im",
+          "label": "IM — anafilaksis",
+          "indication": "Anafilaksis (dewasa & remaja > 12 tahun)",
+          "mode": "bolus",
+          "minDose": 0.3,
+          "maxDose": 0.5,
+          "defaultDose": 0.5,
+          "step": 0.05,
+          "repeatInterval": "tiap 5 menit bila belum membaik",
+          "administration": "0,5 mg (0,5 mL ampul 1 mg/mL = 1:1.000) IM di paha anterolateral. JANGAN IV bolus pada pasien dengan nadi.",
+          "notes": ["Bila tidak membaik setelah 2 dosis IM: infus epinefrin dosis rendah (lihat regimen infus) dan konsultasi ICU."]
+        },
+        {
+          "id": "infus-syok",
+          "label": "Infus kontinu — syok / anafilaksis refrakter",
+          "indication": "Syok refrakter, anafilaksis refrakter, pasca-ROSC dengan hipotensi",
+          "mode": "infusion",
+          "unit": "mcgPerKgPerMin",
+          "minDose": 0.01,
+          "maxDose": 0.5,
+          "defaultDose": 0.05,
+          "step": 0.01,
+          "hardCeilingDose": 1.0,
+          "administration": "Mulai 0,05 mcg/kg/menit; titrasi tiap 5–10 menit sesuai TD dan perfusi.",
+          "notes": ["Pantau EKG kontinu (takiaritmia), gula darah, dan laktat (efek β2 meningkatkan laktat)."]
+        },
+        {
+          "id": "infus-bradikardia",
+          "label": "Infus kontinu — bradikardia simtomatik",
+          "indication": "Bradikardia simtomatik refrakter atropin (ACLS)",
+          "mode": "infusion",
+          "unit": "mcgPerMin",
+          "minDose": 2,
+          "maxDose": 10,
+          "defaultDose": 2,
+          "step": 1,
+          "hardCeilingDose": 20,
+          "administration": "2–10 mcg/menit, titrasi sesuai respons; siapkan pacu transkutan.",
+          "notes": []
+        }
+      ],
+      "preparationNotes": [
+        "Periksa label pengenceran: 1:1.000 (1 mg/mL) untuk IM; 1:10.000 (0,1 mg/mL) untuk IV bolus; infus hanya via syringe/infusion pump."
+      ],
+      "monograph": "Agonis α dan β. Obat utama henti jantung (vasokonstriksi untuk perfusi koroner) dan anafilaksis (IM lini pertama). Infus dosis rendah untuk syok refrakter dan bradikardia simtomatik. Efek samping: takiaritmia, hipertensi, iskemia miokard, hiperglikemia, laktat meningkat.",
+      "references": ["AHA ACLS 2020/2025", "Resuscitation Council UK — Anaphylaxis 2021", "WAO Anaphylaxis Guidance 2020"]
+    },
+    {
+      "id": "sulfas-atropin",
+      "name": "Sulfas Atropin",
+      "drugClass": "Antikolinergik (antimuskarinik)",
+      "isHighAlert": true,
+      "ampoule": { "mg": 0.25, "mL": 1 },
+      "defaultAmpouleCount": 4,
+      "defaultFinalVolumeML": 50,
+      "concentrationDisplayUnit": "mgPerML",
+      "diluentRules": [
+        { "diluent": "nacl09", "status": "compatible", "note": "Kompatibel." },
+        { "diluent": "dextrose5", "status": "compatible", "note": "Kompatibel." }
+      ],
+      "peripheralMaxConcentrationMgPerML": null,
+      "centralLinePreferred": false,
+      "extravasationWarning": null,
+      "regimens": [
+        {
+          "id": "bolus-bradikardia",
+          "label": "Bolus — bradikardia simtomatik",
+          "indication": "Bradikardia simtomatik (hipotensi, penurunan kesadaran, syok, nyeri dada iskemik, gagal jantung akut)",
+          "mode": "bolus",
+          "minDose": 0.5,
+          "maxDose": 1,
+          "defaultDose": 1,
+          "step": 0.25,
+          "maxCumulativeMg": 3,
+          "repeatInterval": "tiap 3–5 menit (maks total 3 mg)",
+          "administration": "IV bolus cepat (bolus lambat/dosis < 0,5 mg dapat memicu bradikardia paradoksal). Sediaan 0,25 mg/mL: 1 mg = 4 mL.",
+          "notes": [
+            "Kurang efektif pada blok AV derajat tinggi (Mobitz II/total) dan pasien transplantasi jantung — siapkan pacu transkutan, dopamin, atau epinefrin."
+          ]
+        },
+        {
+          "id": "bolus-organofosfat",
+          "label": "Bolus — keracunan organofosfat/karbamat",
+          "indication": "Krisis kolinergik (bronkorea, bradikardia, miosis)",
+          "mode": "bolus",
+          "minDose": 1,
+          "maxDose": 2,
+          "defaultDose": 2,
+          "step": 0.5,
+          "repeatInterval": "dengan menggandakan dosis tiap 5 menit hingga atropinisasi",
+          "administration": "1–2 mg IV, gandakan dosis tiap 5 menit (2 → 4 → 8 mg …) hingga atropinisasi: paru bersih dari ronki/bronkorea, HR > 80×/menit, TDS > 80 mmHg, mukosa kering. Pupil BUKAN target utama.",
+          "notes": [
+            "Setelah atropinisasi: infus 10–20% dari total dosis loading per jam.",
+            "Dekontaminasi dan proteksi petugas (APD)."
+          ]
+        }
+      ],
+      "preparationNotes": [],
+      "monograph": "Antagonis muskarinik. Lini pertama bradikardia simtomatik (ACLS) dan antidot keracunan organofosfat/karbamat. Tidak lagi direkomendasikan rutin untuk asistol/PEA. Efek samping: takikardia, retensi urin, delirium antikolinergik, hipertermia.",
+      "references": ["AHA ACLS 2020/2025 — Bradikardia", "Eddleston M et al. Lancet 2008 — organophosphate poisoning"]
+    },
+    {
+      "id": "amiodaron",
+      "name": "Amiodaron",
+      "drugClass": "Antiaritmia kelas III",
+      "isHighAlert": true,
+      "ampoule": { "mg": 150, "mL": 3 },
+      "defaultAmpouleCount": 6,
+      "defaultFinalVolumeML": 500,
+      "concentrationDisplayUnit": "mgPerML",
+      "diluentRules": [
+        { "diluent": "dextrose5", "status": "preferred", "note": "Label produsen: encerkan dalam D5%." },
+        { "diluent": "nacl09", "status": "caution", "note": "Label produsen menganjurkan HANYA D5% — dalam NaCl 0,9% stabilitas tidak dijamin pada semua konsentrasi (risiko presipitasi). Gunakan D5% bila tersedia." }
+      ],
+      "peripheralMaxConcentrationMgPerML": 2,
+      "centralLinePreferred": false,
+      "extravasationWarning": "Flebitis sering terjadi: gunakan vena besar, konsentrasi perifer ≤ 2 mg/mL, ganti lokasi bila nyeri/kemerahan.",
+      "regimens": [
+        {
+          "id": "bolus-henti-jantung",
+          "label": "Bolus — VF/pVT refrakter (henti jantung)",
+          "indication": "VF/VT tanpa nadi setelah syok ke-3",
+          "mode": "bolus",
+          "minDose": 150,
+          "maxDose": 300,
+          "defaultDose": 300,
+          "step": 150,
+          "maxCumulativeMg": 450,
+          "repeatInterval": "dosis ke-2 150 mg (setelah syok ke-5)",
+          "administration": "300 mg IV/IO bolus (boleh diencerkan dalam 20 mL D5%), dosis kedua 150 mg.",
+          "notes": ["Alternatif: lidokain 1–1,5 mg/kg IV, lalu 0,5–0,75 mg/kg (maks 3 mg/kg)."]
+        },
+        {
+          "id": "loading-takikardia",
+          "label": "Loading — takikardia kompleks lebar stabil / AF",
+          "indication": "VT monomorfik stabil, takikardia kompleks lebar stabil, kontrol irama AF",
+          "mode": "bolus",
+          "minDose": 150,
+          "maxDose": 150,
+          "defaultDose": 150,
+          "step": 150,
+          "maxCumulativeMg": 2200,
+          "repeatInterval": "dapat diulang 150 mg bila VT berulang (maks 2,2 g/24 jam)",
+          "administration": "150 mg dalam 100 mL D5% habis dalam 10 menit (600 mL/jam via pump), lalu lanjutkan infus maintenance.",
+          "notes": ["Pantau hipotensi dan bradikardia selama loading."]
+        },
+        {
+          "id": "infus-maintenance",
+          "label": "Infus maintenance (24 jam)",
+          "indication": "Setelah loading / pasca-ROSC VF/pVT",
+          "mode": "infusion",
+          "unit": "mgPerMin",
+          "minDose": 0.5,
+          "maxDose": 1.0,
+          "defaultDose": 1.0,
+          "step": 0.1,
+          "hardCeilingDose": 1.0,
+          "administration": "1 mg/menit selama 6 jam pertama (360 mg), lalu 0,5 mg/menit selama 18 jam (540 mg). Total maks 2,2 g/24 jam.",
+          "notes": ["Konsentrasi > 2 mg/mL harus via CVC.", "Gunakan set infus non-PVC/filter in-line bila tersedia."]
+        }
+      ],
+      "preparationNotes": [
+        "Infus > 1 jam: konsentrasi tidak melebihi 2 mg/mL kecuali via CVC."
+      ],
+      "monograph": "Antiaritmia kelas III (juga efek kelas I, II, IV). Untuk VF/pVT refrakter, VT stabil, dan kontrol irama/laju AF. Efek samping akut: hipotensi, bradikardia, blok AV, flebitis, pemanjangan QT.",
+      "references": ["AHA ACLS 2020/2025", "Label produsen Cordarone IV"]
+    },
+    {
+      "id": "nicardipin",
+      "name": "Nicardipin",
+      "drugClass": "Antihipertensi (penghambat kanal kalsium dihidropiridin)",
+      "isHighAlert": true,
+      "ampoule": { "mg": 10, "mL": 10 },
+      "defaultAmpouleCount": 5,
+      "defaultFinalVolumeML": 250,
+      "concentrationDisplayUnit": "mgPerML",
+      "diluentRules": [
+        { "diluent": "nacl09", "status": "compatible", "note": "Kompatibel. Catatan: TIDAK kompatibel dengan Ringer Laktat dan natrium bikarbonat." },
+        { "diluent": "dextrose5", "status": "compatible", "note": "Kompatibel. Catatan: TIDAK kompatibel dengan Ringer Laktat dan natrium bikarbonat." }
+      ],
+      "peripheralMaxConcentrationMgPerML": 0.2,
+      "centralLinePreferred": false,
+      "extravasationWarning": "Flebitis: pada vena perifer ganti lokasi infus tiap 12 jam.",
+      "regimens": [
+        {
+          "id": "infus-hipertensi",
+          "label": "Infus kontinu — krisis hipertensi / stroke",
+          "indication": "Hipertensi emergensi, stroke iskemik (pra/pasca trombolisis), perdarahan intraserebral",
+          "mode": "infusion",
+          "unit": "mgPerHour",
+          "minDose": 2.5,
+          "maxDose": 15,
+          "defaultDose": 5,
+          "step": 0.5,
+          "hardCeilingDose": 15,
+          "administration": "Mulai 5 mg/jam; naikkan 2,5 mg/jam tiap 5–15 menit hingga target TD; maks 15 mg/jam. Setelah target tercapai turunkan ke ±3 mg/jam.",
+          "notes": [
+            "Stroke iskemik kandidat trombolisis: target < 185/110 sebelum dan < 180/105 selama 24 jam setelah alteplase.",
+            "Hipertensi emergensi umum: turunkan MAP maks 25% dalam 1 jam pertama.",
+            "Perdarahan intraserebral: target TDS 140 mmHg (hindari < 130 mmHg)."
+          ]
+        }
+      ],
+      "preparationNotes": [
+        "Label produsen: encerkan hingga 0,1–0,2 mg/mL. Sediaan tidak diencerkan (1 mg/mL) hanya via CVC."
+      ],
+      "monograph": "Penghambat kanal kalsium dihidropiridin IV dengan onset 5–15 menit dan mudah dititrasi. Pilihan untuk hipertensi emergensi dan kontrol TD pada stroke. Efek samping: takikardia refleks, sakit kepala, flebitis, hipotensi.",
+      "references": ["AHA/ASA Acute Ischemic Stroke 2019", "AHA/ASA Spontaneous ICH 2022", "Label produsen Nicardipine HCl"]
+    },
+    {
+      "id": "nitrogliserin",
+      "name": "Nitrogliserin (Gliseril Trinitrat)",
+      "drugClass": "Vasodilator nitrat",
+      "isHighAlert": true,
+      "ampoule": { "mg": 10, "mL": 10 },
+      "defaultAmpouleCount": 1,
+      "defaultFinalVolumeML": 50,
+      "concentrationDisplayUnit": "mcgPerML",
+      "diluentRules": [
+        { "diluent": "nacl09", "status": "compatible", "note": "Kompatibel. Gunakan spuit/selang non-PVC bila tersedia (adsorpsi ke PVC)." },
+        { "diluent": "dextrose5", "status": "compatible", "note": "Kompatibel. Gunakan spuit/selang non-PVC bila tersedia (adsorpsi ke PVC)." }
+      ],
+      "peripheralMaxConcentrationMgPerML": null,
+      "centralLinePreferred": false,
+      "extravasationWarning": null,
+      "regimens": [
+        {
+          "id": "infus-ska-edema-paru",
+          "label": "Infus kontinu — SKA / edema paru akut / hipertensi",
+          "indication": "Nyeri dada iskemik persisten, edema paru akut kardiogenik, hipertensi emergensi dengan SKA",
+          "mode": "infusion",
+          "unit": "mcgPerMin",
+          "minDose": 5,
+          "maxDose": 200,
+          "defaultDose": 10,
+          "step": 5,
+          "hardCeilingDose": 400,
+          "administration": "Mulai 5–10 mcg/menit; naikkan 5–10 mcg/menit tiap 3–5 menit sesuai nyeri dada/TD. Hentikan/kurangi bila TDS < 90 mmHg atau turun > 30% dari baseline.",
+          "notes": [
+            "Kontraindikasi: infark ventrikel kanan, TDS < 90 mmHg, PDE-5 inhibitor (sildenafil 24 jam / tadalafil 48 jam), stenosis aorta berat.",
+            "Toleransi nitrat dapat terjadi setelah 24–48 jam."
+          ]
+        }
+      ],
+      "preparationNotes": [],
+      "monograph": "Donor nitrit oksida: venodilatasi (menurunkan preload) dan vasodilatasi koroner. Untuk SKA dengan nyeri persisten, edema paru akut, hipertensi dengan iskemia. Efek samping: hipotensi, sakit kepala, takikardia refleks.",
+      "references": ["ESC ACS Guidelines 2023", "Label produsen Nitroglycerin injection"]
+    }
+  ]
+}
