@@ -64,6 +64,8 @@ Di Windows: jalankan dari "x64 Native Tools Command Prompt for VS 2022", atau mu
 
 ## Build aplikasi iOS
 
+**Pasang di iPhone pakai Mac teman (gratis): lihat [docs/PASANG_DI_IPHONE.md](docs/PASANG_DI_IPHONE.md).**
+
 **Dengan Mac (Xcode 16+):**
 
 ```bash

@@ -6,3 +6,4 @@ DerivedData/
 xcuserdata/
 build.log
 ClinicalCore/Info.plist
+.tools/
